@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
-import starlightKbd from 'starlight-kbd';
 
 export const locales = {
   root: {
@@ -32,6 +31,10 @@ export const locales = {
   id: {
     label: 'Indonesian',
     lang: 'id',
+  },
+  es: {
+    label: 'Spanish',
+    lang: 'es',
   },
 };
 const site = 'https://wiki.cachyos.org/';
@@ -89,12 +92,6 @@ export default defineConfig({
           },
         },
       ],
-      plugins: [
-        starlightKbd({
-          globalPicker: false,
-          types: [{ id: 'linux', label: 'Linux', default: true }],
-        }),
-      ],
       locales,
       sidebar: [
         {
@@ -105,6 +102,7 @@ export default defineConfig({
             pl: 'Zaczynamy',
             sk: 'Začíname',
             cs: 'Začínáme',
+            es: 'Comencemos',
           },
           items: [
             {
@@ -115,6 +113,7 @@ export default defineConfig({
                 pl: 'Dlaczego CachyOS?',
                 sk: 'Prečo CachyOS?',
                 cs: 'Proč CachyOS?',
+                es: '¿Por qué CachyOS?',
               },
               link: 'cachyos_basic/why_cachyos',
             },
@@ -126,6 +125,7 @@ export default defineConfig({
                 pl: 'Pobieranie CachyOS',
                 sk: 'Sťahovanie CachyOS',
                 cs: 'Stažení CachyOS',
+                es: 'Descargando CachyOS',
               },
               link: 'cachyos_basic/download',
             },
@@ -139,6 +139,7 @@ export default defineConfig({
             pl: 'Instalacja',
             sk: 'Inštalácia',
             cs: 'Instalace',
+            es: 'Instalación',
           },
           items: [
             {
@@ -149,6 +150,7 @@ export default defineConfig({
                 pl: 'Wymagania i przygotowanie do instalacji',
                 sk: 'Požiadavky CachyOS a inštalačné médium',
                 cs: 'Požadavky CachyOS a předinstalační příprava',
+                es: 'Requisitos y preparación de la instalación',
               },
               link: 'installation/installation_prepare',
             },
@@ -160,6 +162,7 @@ export default defineConfig({
                 pl: 'Boot menedżer',
                 sk: 'Boot manažéry',
                 cs: 'Správci zavádění',
+                es: 'Gestores de arranque',
               },
               link: 'installation/boot_managers',
             },
@@ -171,6 +174,7 @@ export default defineConfig({
                 pl: 'System plików',
                 sk: 'Súborový systém',
                 cs: 'Souborový systém',
+                es: 'Sistema de archivos',
               },
               link: 'installation/filesystem',
             },
@@ -182,6 +186,7 @@ export default defineConfig({
                 pl: 'Zrzuty ekranu',
                 sk: 'Snímky obrazovky',
                 cs: 'Snímky obrazovky',
+                es: 'Capturas de pantalla',
               },
               link: 'installation/screenshots',
             },
@@ -193,6 +198,7 @@ export default defineConfig({
                 pl: 'Środowiska graficzne',
                 sk: 'Desktopové prostredia',
                 cs: 'Desktop prostředí',
+                es: 'Entornos de escritorio',
               },
               link: 'installation/desktop_environments',
             },
@@ -203,6 +209,7 @@ export default defineConfig({
                 de: 'Installation auf Root',
                 sk: 'Inštalácia Root',
                 cs: 'Instalace na kořenový oddíl',
+                es: 'Instalación en la raíz',
               },
               link: 'installation/installation_on_root',
             },
@@ -214,6 +221,7 @@ export default defineConfig({
                 pl: 'Instalacja na T2 MacBook',
                 sk: 'Inštalácia na T2 MacBook',
                 cs: 'Instalace na MacBook T2',
+                es: 'Instalación en T2 MacBook',
               },
               link: 'installation/installation_t2macbook',
             },
@@ -225,6 +233,7 @@ export default defineConfig({
                 pl: 'Instalacja Handheld Edition',
                 sk: 'Inštalácia Handheld Edition',
                 cs: 'Instalace verze pro přenosné zařízení',
+                es: 'Instalación Handheld Edition',
               },
               link: 'installation/installation_handheld',
             },
@@ -238,6 +247,7 @@ export default defineConfig({
             pl: 'Funkcje CachyOS',
             cs: 'Funkce CachyOS',
             sk: 'Funkcie CachyOS',
+            es: 'Características de CachyOS',
           },
           items: [
             {
@@ -249,6 +259,7 @@ export default defineConfig({
                 pl: 'CachyOS chroot menedżer (cachy-chroot)',
                 cs: 'Pomůcka pro chroot CachyOS (cachy-chroot)',
                 sk: 'Pomôcka pre chroot CachyOS (cachy-chroot)',
+                es: 'Asistente chroot de CachyOS (cachy-chroot)',
               },
             },
             {
@@ -260,6 +271,7 @@ export default defineConfig({
                 pl: 'CachyOS Wykrywanie sprzętu (chwd)',
                 cs: 'Detekce hardwaru CachyOS (chwd)',
                 sk: 'Detekcia hardvéru CachyOS (chwd)',
+                es: 'Detección de hardware de CachyOS (chwd)',
               },
             },
             {
@@ -270,6 +282,7 @@ export default defineConfig({
                 pl: 'Jądro CachyOS',
                 cs: 'Jádro CachyOS',
                 sk: 'Jadro CachyOS',
+                es: 'Núcleo de CachyOS',
               },
               link: 'features/kernel',
             },
@@ -280,6 +293,7 @@ export default defineConfig({
                 de: 'Kernel-Manager',
                 sk: 'Správca jadra',
                 cs: 'Správce jader',
+                es: 'Gestor del núcleo',
               },
               link: 'features/kernel_manager',
             },
@@ -291,6 +305,7 @@ export default defineConfig({
                 pl: 'Ustawienia CachyOS',
                 cs: 'Nastavení CachyOS',
                 sk: 'Nastavenia CachyOS',
+                es: 'Configuración de CachyOS',
               },
               link: 'features/cachyos_settings',
             },
@@ -302,6 +317,7 @@ export default defineConfig({
                 pl: 'Zoptymalizowane repozytoria',
                 cs: 'Optimalizované repozitáře',
                 sk: 'Optimalizované repozitáre',
+                es: 'Repositorios optimizados',
               },
               link: 'features/optimized_repos',
             },
@@ -315,6 +331,7 @@ export default defineConfig({
             pl: 'Konfiguracja',
             sk: 'Konfigurácia',
             cs: 'Nastavení',
+            es: 'Configuración',
           },
           items: [
             {
@@ -325,6 +342,7 @@ export default defineConfig({
                 pl: 'Konfiguracja Secure Boot',
                 cs: 'Nastavení zabezpečeného spouštění',
                 sk: 'Nastavenie zabezpečeného spúšťania',
+                es: 'Configuración de Secure Boot',
               },
               link: 'configuration/secure_boot_setup',
             },
@@ -336,6 +354,7 @@ export default defineConfig({
                 pl: 'Konfiguracja po instalacji',
                 sk: 'Nastavenie po inštalácii',
                 cs: 'Nastavení po instalaci',
+                es: 'Configuración posterior a la instalación',
               },
               link: 'configuration/post_install_setup',
             },
@@ -347,6 +366,7 @@ export default defineConfig({
                 pl: 'Konfiguracja Boot Managera',
                 sk: 'Konfigurácia Boot manažéra',
                 cs: 'Konfigurace správce spouštění',
+                es: 'Configuración del gestor de arranque',
               },
               link: 'configuration/boot_manager_configuration',
             },
@@ -358,6 +378,7 @@ export default defineConfig({
                 pl: 'Laptopy z podwójnym GPU',
                 sk: 'Dvojité GPU notebooky',
                 cs: 'Notebooky s dvojitou GPU',
+                es: 'Portátiles con doble GPU',
               },
               link: 'configuration/dual_gpu',
             },
@@ -370,6 +391,7 @@ export default defineConfig({
                 pl: 'Gry',
                 cs: 'Hraní her',
                 sk: 'Hranie hier',
+                es: 'Gaming',
               },
             },
             {
@@ -380,6 +402,7 @@ export default defineConfig({
                 pl: 'Ogólne poprawki systemowe',
                 sk: 'Všeobecné systémové úpravy',
                 cs: 'Obecné úpravy systému',
+                es: 'Ajustes generales del sistema',
               },
               link: 'configuration/general_system_tweaks',
             },
@@ -391,6 +414,7 @@ export default defineConfig({
                 pl: 'sched-ext Poradnik',
                 sk: 'sched-ext návod',
                 cs: 'sched-ext Tutoriál',
+                es: 'Tutorial de sched-ext',
               },
               link: 'configuration/sched-ext',
             },
@@ -402,6 +426,7 @@ export default defineConfig({
                 pl: 'Automatyczne montowanie dodatkowych dysków',
                 cs: 'Automatické připojování dalších disků',
                 sk: 'Automatické pripájanie ďalších diskov',
+                es: 'Montaje automático de unidades adicionales',
               },
               link: 'configuration/automount_with_fstab',
             },
@@ -413,6 +438,7 @@ export default defineConfig({
                 pl: 'Włączanie akceleracji sprzętowej w Google Chrome',
                 cs: 'Povolení hardwarové akcelerace v Google Chrome',
                 sk: 'Povolenie hardvérovej akcelerácie v Google Chrome',
+                es: 'Habilitación de la aceleración por hardware en Google Chrome',
               },
               link: 'configuration/enabling_hardware_acceleration_in_google_chrome',
             },
@@ -426,6 +452,7 @@ export default defineConfig({
             pl: 'Środowiska graficzne',
             cs: 'Desktopová prostředí',
             sk: 'Desktopové prostredia',
+            es: 'Entornos de escritorio',
           },
           items: [
             {
@@ -454,6 +481,7 @@ export default defineConfig({
             pl: 'Wsparcie',
             sk: 'Podpora',
             cs: 'Podpora',
+            es: 'Soporte',
           },
           items: [
             {
@@ -464,6 +492,7 @@ export default defineConfig({
                 pl: 'Najczęściej zadawane pytania',
                 cs: 'Často kladené otázky',
                 sk: 'Najčastejšie kladené otázky',
+                es: 'Preguntas frecuentes',
               },
               link: 'support/faq',
             },
@@ -475,6 +504,7 @@ export default defineConfig({
                 pl: 'Zgłaszanie błędów',
                 sk: 'Odoslanie chýb',
                 cs: 'Nahlášení chyb',
+                es: 'Informar de errores',
               },
               link: 'support/submitting_bugs',
             },
@@ -486,11 +516,15 @@ export default defineConfig({
                 pl: 'Zgłaszanie próśb o pakiety',
                 sk: 'Odoslanie požiadaviek na balíčky',
                 cs: 'Žádosti o balíčky',
+                es: 'Solicitud de paquetes',
               },
               link: 'support/submitting_package_requests',
             },
             {
               label: 'AUR Safety: Quick Checklist for CachyOS Users',
+              translations: {
+                es: 'Seguridad AUR: Lista de verificación rápida para usuarios de CachyOS',
+              },
               link: 'support/aur_safety_best_practices',
             },
             {
@@ -501,6 +535,7 @@ export default defineConfig({
                 pl: 'Media społecznościowe',
                 sk: 'Sociálne siete',
                 cs: 'Sociální sítě',
+                es: 'Redes sociales',
               },
               link: 'support/social',
             },
@@ -514,6 +549,7 @@ export default defineConfig({
             pl: 'Dzienniki zmian',
             sk: 'Zmenové logy',
             cs: 'Změny',
+            es: 'Registros de cambios',
           },
           items: [
             {
@@ -524,6 +560,7 @@ export default defineConfig({
                 pl: 'GUI instalator i ISO',
                 sk: 'GUI Inštalátor a ISO',
                 cs: 'Grafický instalátor a ISO',
+                es: 'Instalador gráfico e ISO',
               },
               link: 'changelogs/gui_installer',
             },
@@ -535,6 +572,7 @@ export default defineConfig({
                 pl: 'CLI instalator',
                 sk: 'CLI Inštalátor',
                 cs: 'Příkazový řádek instalátoru',
+                es: 'Instalador de línea de comandos',
               },
               link: 'changelogs/cli_installer',
             },
@@ -548,6 +586,7 @@ export default defineConfig({
             pl: 'Zasady',
             sk: 'Politika',
             cs: 'Podmínky',
+            es: 'Políticas',
           },
           items: [
             {
@@ -559,6 +598,7 @@ export default defineConfig({
                 id: 'Peraturan Komunitas',
                 sk: 'Pravidlá komunity',
                 cs: 'Pravidla komunity',
+                es: 'Reglas de la comunidad',
               },
               link: 'policy/community-rules',
             },
@@ -570,6 +610,7 @@ export default defineConfig({
                 pl: 'Kodeks postępowania',
                 sk: 'Kódex správania',
                 cs: 'Kodex chování',
+                es: 'Código de Conducta',
               },
               link: 'policy/code_of_conduct',
             },
@@ -581,6 +622,7 @@ export default defineConfig({
                 pl: 'Warunki korzystania z usługi',
                 sk: 'Podmienky služby',
                 cs: 'Obchodní podmínky',
+                es: 'Términos de servicio',
               },
               link: 'policy/terms_of_service',
             },
@@ -592,6 +634,7 @@ export default defineConfig({
                 pl: 'Polityka prywatności',
                 sk: 'Zásady ochrany osobných údajov',
                 cs: 'Zásady ochrany osobních údajů',
+                es: 'Política de privacidad',
               },
               link: 'policy/privacy_policy',
             },
@@ -603,6 +646,7 @@ export default defineConfig({
                 pl: 'Polityka repozytoriów',
                 sk: 'Politika repozitárov',
                 cs: 'Repozitářní politika',
+                es: 'Política de repositorio',
               },
               link: 'policy/repository_policy',
             },
@@ -614,6 +658,7 @@ export default defineConfig({
                 pl: 'Darowizna',
                 sk: 'Darcovstvo',
                 cs: 'Dobrovolné příspěvky',
+                es: 'Donación',
               },
               link: 'policy/donation',
             },
