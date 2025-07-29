@@ -1,13 +1,13 @@
 ---
-title: Submitting Package Requests to CachyOS
-description: Package Requests for AUR Packages, ...
+title: Envío de Solicitudes de Paquetes a CachyOS
+description: Solicitudes de Paquetes para AUR, ...
 ---
 
-CachyOS offers an extensive list of precompiled AUR Packages, which are commonly used.
-Users can create requests for AUR packages, which, if approved, are automatically updated by our build server
+CachyOS ofrece una amplia lista de paquetes AUR precompilados, que son de uso común.
+Los usuarios pueden crear solicitudes para paquetes AUR, que, si son aprobadas, se actualizan automáticamente por nuestro servidor de compilación.
 
-If you want us to add a package, you can submit a request on GitHub or in the forum.
+Si quieres que añadamos un paquete, puedes enviar una solicitud en GitHub o en el foro.
 
 - GitHub: https://github.com/CachyOS/distribution/issues
-- Forum: https://discuss.cachyos.org/c/feedback/repository/11
-- Discord: [Feedback Channel](https://discord.com/channels/862292009423470592/1150723027986813018)
+- Foro: https://discuss.cachyos.org/c/feedback/repository/11
+- Discord: [Canal de Feedback](https://discord.com/channels/862292009423470592/1150723027986813018)

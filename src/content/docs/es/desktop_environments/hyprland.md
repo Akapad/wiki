@@ -1,146 +1,146 @@
 ---
-title: Hyprland configuration
-description: CachyOS Hyprland keybinds & FAQ
+title: Configuración de Hyprland
+description: Atajos de teclado y FAQ de CachyOS Hyprland
 ---
 
 :::caution
-Since Hyprland started their rework. Please be aware that it is not currently stable and you can experience bugs/unexpected crashes. Use at your own risk.
-Even their "stable" version is also broken and buggy therefore we do not plan to provide support outside of our dotfiles. Refer to their [wiki](<https://wiki.hyprland.org/>) instead.
+Dado que Hyprland comenzó su rediseño, ten en cuenta que actualmente no es estable y puedes experimentar errores/cierres inesperados. Úsalo bajo tu propia responsabilidad.
+Incluso su versión "estable" también tiene fallos y errores, por lo que no planeamos proporcionar soporte más allá de nuestros archivos de configuración. Consulta su [wiki](<https://wiki.hyprland.org/>) en su lugar.
 :::
 
 :::tip
-Start Hyprland using the non systemd entry otherwise it won't start and lead to a black screen.
+Inicia Hyprland utilizando la entrada sin systemd, de lo contrario no arrancará y te llevará a una pantalla negra.
 
-Example: **`Hyprland`** instead of **`Hyprland(systemd)`**.
+Ejemplo: **`Hyprland`** en lugar de **`Hyprland(systemd)`**.
 :::
 
-Our main goal with our setup is to have a working Hyprland but keeping it simple therefore some essential tools and programs might be missing such as a GUI File Manager.
+Nuestro objetivo principal con nuestra configuración es tener un Hyprland funcional pero manteniéndolo simple, por lo tanto, pueden faltar algunas herramientas y programas esenciales como un Gestor de Archivos con interfaz gráfica.
 
-Take a look into our [Hyprland FAQ.](/desktop_environments/hyprland#faq)
+Echa un vistazo a nuestras [FAQ de Hyprland.](/desktop_environments/hyprland#faq)
 
-**Dotfiles maintained by [msmafra](https://github.com/msmafra) and [Lysec](https://github.com/Ly-sec)**
+**Archivos de configuración mantenidos por [msmafra](https://github.com/msmafra) y [Lysec](https://github.com/Ly-sec)**
 
-## Keybinds
+## Atajos de teclado
 
-Most of the key combinations require the use of the mod key which in our case is the Windows key (referenced as SUPER),  you can change it on the config file.
+La mayoría de las combinaciones de teclas requieren el uso de la tecla mod, que en nuestro caso es la tecla Windows (referenciada como SUPER), puedes cambiarla en el archivo de configuración.
 
-### Open terminal
+### Abrir terminal
 
 * SUPER + Return
 
-### Go to workspace (1-9)
+### Ir al espacio de trabajo (1-9)
 
-* SUPER + 1-9 (Number row, number pad does not count)
+* SUPER + 1-9 (Fila de números, el teclado numérico no cuenta)
 
-### Change focus to (Left,Right,Up,Down)
+### Cambiar enfoque a (Izquierda, Derecha, Arriba, Abajo)
 
-* SUPER + ArrowKeys
+* SUPER + Teclas de flecha
 
-### Move between workspaces with the scroll wheel
+### Moverse entre espacios de trabajo con la rueda del ratón
 
-* Super + Scroll
+* Super + Desplazamiento
 
-### Move between workspaces with comma and period
+### Moverse entre espacios de trabajo con coma y punto
 
-* Super + period (Next workspace)
-* Super + comma (Previous workspace)
+* Super + punto (Siguiente espacio de trabajo)
+* Super + coma (Espacio de trabajo anterior)
 
-### Move focused window to workspace (1-9) but don't go there
+### Mover ventana enfocada al espacio de trabajo (1-9) sin ir allí
 
 * SUPER + Shift + 1-9
 
-### Same as above but also switch to said workspace
+### Lo mismo que arriba pero también cambiar a dicho espacio de trabajo
 
 * SUPER + CTRL + 1-9
 
-### Open Rofi (Program Launcher)
+### Abrir Rofi (Lanzador de programas)
 
-* SUPER + Space
+* SUPER + Espacio
   
-### Close focused window
+### Cerrar ventana enfocada
 
 * SUPER + Q
 
-### Move focused window to direction (Up,Down,Left,Right)
+### Mover ventana enfocada en la dirección (Arriba, Abajo, Izquierda, Derecha)
 
-* SUPER + Shift + ArrowKeys
+* SUPER + Shift + Teclas de flecha
 
-### Resize focused window
+### Redimensionar ventana enfocada
 
-* SUPER + CTRL + Shift + J (Downwards)
-* SUPER + CTRL + Shift + K (Upwards)
-* SUPER + CTRL + Shift + H (Left)
-* SUPER + CTRL + Shift + L (Right)
-* SUPER + CTRL + Shift + ArrowKey (Any direction)
+* SUPER + CTRL + Shift + J (Hacia abajo)
+* SUPER + CTRL + Shift + K (Hacia arriba)
+* SUPER + CTRL + Shift + H (Izquierda)
+* SUPER + CTRL + Shift + L (Derecha)
+* SUPER + CTRL + Shift + Tecla de flecha (Cualquier dirección)
 
-### Toggle focused window into Floating or Fullscreen state
+### Alternar ventana enfocada entre estado Flotante o Pantalla completa
 
-* SUPER + F (Fullscreen)
-* SUPER + V (Floating)
+* SUPER + F (Pantalla completa)
+* SUPER + V (Flotante)
 
-### Enter resize submap state (Allows resizing), H,J,K,L or via arrow keys
+### Entrar en estado de submapa de redimensionamiento (Permite redimensionar), H,J,K,L o mediante teclas de flecha
 
 * SUPER + R
-* ESC to exit
+* ESC para salir
 
-### Move window dragging the mouse
+### Mover ventana arrastrando el ratón
 
-* SUPER + Left click
+* SUPER + Clic izquierdo
 
-### Resize window
+### Redimensionar ventana
 
-* SUPER + Right click (keep it pressed and drag your cursor on any direction)
+* SUPER + Clic derecho (mantenerlo presionado y arrastrar el cursor en cualquier dirección)
 
-### Volume control (Multimedia keys) such as VolUP, VolDOWN and MUTE
+### Control de volumen (teclas multimedia) como SubirVol, BajarVol y SILENCIAR
 
-### Brightness control should work depending on Hardware
+### El control de brillo debería funcionar dependiendo del hardware
 
-### Playback control for pausing, playing, next and previous via multimedia keys (Laptop or keyboard)
+### Control de reproducción para pausar, reproducir, siguiente y anterior a través de teclas multimedia (Portátil o teclado)
 
-### Pin focused window so it shows on all workspaces (Floating)
+### Fijar ventana enfocada para que se muestre en todos los espacios de trabajo (Flotante)
 
 * SUPER + Y
 
-### Toggle current window to a group
+### Alternar la ventana actual a un grupo
 
 * SUPER + K
 
-### Change active group
+### Cambiar grupo activo
 
 * SUPER + TAB
 
-### Reload Waybar
+### Recargar Waybar
 
 * SUPER + O
 
-### Lower gap between windows
+### Reducir espacio entre ventanas
 
 * SUPER + G
 
-### Reset gaps to default value
+### Restablecer espacios al valor predeterminado
 
 * SUPER + Shift + G
 
-### Open file manager (Variable not configured by default)
+### Abrir gestor de archivos (Variable no configurada por defecto)
 
 * SUPER + E
 
-### Screenshot
+### Captura de pantalla
 
-* Print (PrtSc)
+* Impr Pant (PrtSc)
 
 ## FAQ
 
-### Why does my Discord, Thunar and Nautilus have a weird background?
+### ¿Por qué mi Discord, Thunar y Nautilus tienen un fondo extraño?
 
-This is because the window has a modified opacity
+Esto se debe a que la ventana tiene una opacidad modificada
 
-* Consider modifying the window rule in the [Hyprland](https://github.com/CachyOS/cachyos-hyprland-settings/blob/master/etc/skel/.config/hypr/config/windowrules.conf#L21) config file.
+* Considera modificar la regla de ventana en el archivo de configuración de [Hyprland](https://github.com/CachyOS/cachyos-hyprland-settings/blob/master/etc/skel/.config/hypr/config/windowrules.conf#L21).
 
-```sh title='Example'
+```sh title='Ejemplo'
 windowrulev2 = opacity 0.92, class:^(thunar|nemo)$
 ```
 
-### Is there a File Manager included?
+### ¿Hay algún Gestor de Archivos incluido?
 
-* No, install one you like
+* No, instala el que prefieras

@@ -1,137 +1,137 @@
 ---
-title: Terms of Service
+title: Términos de Servicio
 ---
 
-## 1. Scope of the Terms of Service
+## 1. Ámbito de los Términos de Servicio
 
-### 1.1. Definitions
+### 1.1. Definiciones
 
-These Terms of Service govern the use of the CachyOS platform and associated services, including the forums, wiki, bug reporting tool, and other collaborative tools ("Services").
-CachyOS ("we," "us," "our") operates the platform accessible at cachyos.org and related subdomains. Users ("you," "your") must accept these terms to use the Services.
+Estos Términos de Servicio regulan el uso de la plataforma CachyOS y servicios asociados, incluyendo los foros, wiki, herramienta de notificación de errores y otras herramientas colaborativas ("Servicios").
+CachyOS ("nosotros", "nos", "nuestro") opera la plataforma accesible en cachyos.org y subdominios relacionados. Los usuarios ("tú", "tu") deben aceptar estos términos para utilizar los Servicios.
 
-### 1.2. Use of the Services
+### 1.2. Uso de los Servicios
 
-Only natural persons of legal age and with full legal capacity are permitted to use the Services. Minors may use the Services with parental or legal guardian consent.
+Solo personas físicas mayores de edad y con plena capacidad legal pueden utilizar los Servicios. Los menores pueden utilizar los Servicios con el consentimiento de sus padres o tutores legales.
 
-### 1.3. Access to Terms of Service
+### 1.3. Acceso a los Términos de Servicio
 
-The latest version of the Terms of Service can be accessed at any time on our website: https://wiki.cachyos.org/policy/terms_of_service.
+La última versión de los Términos de Servicio puede consultarse en cualquier momento en nuestro sitio web: https://wiki.cachyos.org/policy/terms_of_service.
 
-## 2. Registration, Conclusion of Contract, and Subject Matter
+## 2. Registro, Formalización del Contrato y Objeto
 
-### 2.1. Requirements
+### 2.1. Requisitos
 
-To use our Interactive Services (e.g., forums, package contributions), you must register via our online form, provide accurate contact information, and agree to these Terms of Service.
-Activation of your account signifies the conclusion of the contract. There is no entitlement to activation or participation.
+Para utilizar nuestros Servicios Interactivos (p.ej., foros, contribuciones de paquetes), debes registrarte mediante nuestro formulario online, proporcionar información de contacto precisa y aceptar estos Términos de Servicio.
+La activación de tu cuenta significa la formalización del contrato. No existe derecho a la activación o participación.
 
-### 2.2. Change of the Platform
+### 2.2. Cambios en la Plataforma
 
-We reserve the right to change or expand the Services and structure of the platform. Changes that significantly affect the purpose of these Terms of Service will be communicated to users.
+Nos reservamos el derecho de cambiar o ampliar los Servicios y la estructura de la plataforma. Los cambios que afecten significativamente al propósito de estos Términos de Servicio serán comunicados a los usuarios.
 
-## 3. Duties as a User of the Interactive Services
+## 3. Deberes como Usuario de los Servicios Interactivos
 
-### 3.1. Completeness of Information
+### 3.1. Integridad de la Información
 
-You must provide complete and accurate contact information and update it as necessary.
+Debes proporcionar información de contacto completa y precisa, y actualizarla cuando sea necesario.
 
-### 3.2. Account Use
+### 3.2. Uso de la Cuenta
 
-Your account is personal and must be protected from unauthorized use. You are responsible for any misuse of your account.
+Tu cuenta es personal y debe protegerse de uso no autorizado. Eres responsable de cualquier uso indebido de tu cuenta.
 
-### 3.3. Conduct
+### 3.3. Conducta
 
-Users must interact respectfully and lawfully, adhering to our General Guidelines and Code of Conduct.
+Los usuarios deben interactuar respetuosamente y de forma legal, adhiriéndose a nuestras Directrices Generales y Código de Conducta.
 
-### 3.4. Content and Conduct
+### 3.4. Contenido y Conducta
 
-You are responsible for any content you contribute, ensuring it does not violate these terms or applicable laws.
+Eres responsable de cualquier contenido que contribuyas, asegurando que no viola estos términos o leyes aplicables.
 
-### 3.5. Violations
+### 3.5. Infracciones
 
-You must not publish content that is insulting, false, malicious, or violates any laws, including copyright and trademark laws.
+No debes publicar contenido que sea insultante, falso, malicioso o que viole leyes, incluyendo leyes de derechos de autor y marcas registradas.
 
-### 3.6. Permanent Entries
+### 3.6. Entradas Permanentes
 
-Contributions may be indexed by search engines and remain accessible worldwide. You cannot claim deletion or correction of such entries.
+Las contribuciones pueden ser indexadas por motores de búsqueda y permanecer accesibles mundialmente. No puedes exigir la eliminación o corrección de tales entradas.
 
-### 3.7. Content Discretion
+### 3.7. Discreción de Contenido
 
-We reserve the right to refuse, delete, modify, or remove any content at our discretion and to impose sanctions for violations of these terms.
+Nos reservamos el derecho de rechazar, eliminar, modificar o retirar cualquier contenido a nuestra discreción e imponer sanciones por violaciones de estos términos.
 
-## 4. Liability of the Users; Indemnification
+## 4. Responsabilidad de los Usuarios; Indemnización
 
-You agree to indemnify us against all costs incurred from third-party claims due to your violations of these Terms of Service.
+Aceptas indemnizarnos contra todos los costes derivados de reclamaciones de terceros debidas a tus violaciones de estos Términos de Servicio.
 
-## 5. Transfer of Rights of Use
+## 5. Transferencia de Derechos de Uso
 
-### 5.1. Copyright
+### 5.1. Derechos de Autor
 
-By posting content, you grant us the rights needed to provide our Services. You must ensure you have the rights to any content you upload.
+Al publicar contenido, nos otorgas los derechos necesarios para proporcionar nuestros Servicios. Debes asegurarte de que tienes los derechos de cualquier contenido que subas.
 
-### 5.2. Contribution Licenses
+### 5.2. Licencias de Contribución
 
-Software contributions must be licensed under the project's license or the GNU General Public License version 3.
+Las contribuciones de software deben estar licenciadas bajo la licencia del proyecto o la Licencia Pública General de GNU versión 3.
 
-### 5.3. Continuation of Rights
+### 5.3. Continuación de Derechos
 
-Rights of use remain in effect even after account termination.
+Los derechos de uso permanecen en vigor incluso después de la terminación de la cuenta.
 
-## 6. Availability of the Platform
+## 6. Disponibilidad de la Plataforma
 
-We strive to keep the platform available but cannot guarantee 100% uptime.
+Nos esforzamos por mantener la plataforma disponible pero no podemos garantizar un tiempo de actividad del 100%.
 
-## 7. Liability of CachyOS
+## 7. Responsabilidad de CachyOS
 
-### 7.1. Limitation of Liability
+### 7.1. Limitación de Responsabilidad
 
-We are not responsible for user content or any damages resulting from its use. Users must take precautions against harmful content.
+No somos responsables del contenido de los usuarios ni de los daños resultantes de su uso. Los usuarios deben tomar precauciones contra contenidos dañinos.
 
-### 7.2. Content Review
+### 7.2. Revisión de Contenido
 
-We do not review all content posted by users and are not responsible for it. Unlawful content will be removed upon discovery.
+No revisamos todo el contenido publicado por los usuarios y no somos responsables del mismo. El contenido ilegal será eliminado tras su descubrimiento.
 
-### 7.3. Limitation of Damage Claims
+### 7.3. Limitación de Reclamaciones por Daños
 
-We exclude liability for damages except in cases of gross negligence, intentional misconduct, or violation of essential contractual obligations.
+Excluimos la responsabilidad por daños excepto en casos de negligencia grave, conducta dolosa o violación de obligaciones contractuales esenciales.
 
-### 7.4. Further Limitation of Liability
+### 7.4. Limitación Adicional de Responsabilidad
 
-We are not liable for the content of external linked sites.
+No somos responsables del contenido de sitios externos enlazados.
 
-## 8. Amendment of the Terms of Service
+## 8. Modificación de los Términos de Servicio
 
-### 8.1. Amendments
+### 8.1. Modificaciones
 
-We may amend these Terms of Service as necessary. Users will be notified of changes by email. Failure to object to changes within two weeks signifies acceptance.
+Podemos modificar estos Términos de Servicio según sea necesario. Los usuarios serán notificados de los cambios por correo electrónico. La falta de objeción a los cambios en un plazo de dos semanas significa su aceptación.
 
-### 8.2. Objections to Amendments
+### 8.2. Objeciones a Modificaciones
 
-If you object to changes, the contract will continue under the previous terms, but we may terminate the agreement at the next possible date.
+Si te opones a los cambios, el contrato continuará bajo los términos anteriores, pero podremos terminar el acuerdo en la próxima fecha posible.
 
-## 9. Term and Termination of the Agreement
+## 9. Duración y Terminación del Acuerdo
 
-### 9.1. Period of Terms of Service
+### 9.1. Período de los Términos de Servicio
 
-These Terms of Service are concluded for an indefinite period.
+Estos Términos de Servicio se establecen por tiempo indefinido.
 
-### 9.2. Termination
+### 9.2. Terminación
 
-Either party can terminate these Terms of Service without cause at any time.
+Cualquiera de las partes puede terminar estos Términos de Servicio sin causa en cualquier momento.
 
-### 9.3. Account Deletion
+### 9.3. Eliminación de Cuenta
 
-Public statements and contributions may remain visible even after account deletion.
+Las declaraciones públicas y contribuciones pueden permanecer visibles incluso después de la eliminación de la cuenta.
 
-## 10. Miscellaneous
+## 10. Disposiciones Varias
 
-### 10.1. Applicable Law
+### 10.1. Ley Aplicable
 
-These Terms of Service are governed exclusively by the laws of the relevant jurisdiction, excluding the United Nations Convention on Contracts for the International Sale of Goods (CISG).
+Estos Términos de Servicio se rigen exclusivamente por las leyes de la jurisdicción correspondiente, excluyendo la Convención de las Naciones Unidas sobre los Contratos de Compraventa Internacional de Mercaderías (CISG).
 
-### 10.2. Severability Clause
+### 10.2. Cláusula de Salvaguarda
 
-If any provision of these Terms of Service is found to be invalid, the remaining provisions will remain in effect.
+Si alguna disposición de estos Términos de Servicio se considera inválida, las demás disposiciones permanecerán en vigor.
 
-### 10.3. Disputes
+### 10.3. Disputas
 
-The European Commission's online dispute resolution platform can be accessed at https://ec.europa.eu/consumers/odr. We are not obligated to participate in dispute resolution procedures before a consumer arbitration board.
+La plataforma de resolución de disputas en línea de la Comisión Europea puede accederse en https://ec.europa.eu/consumers/odr. No estamos obligados a participar en procedimientos de resolución de disputas ante una junta de arbitraje de consumidores.

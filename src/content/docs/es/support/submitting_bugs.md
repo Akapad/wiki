@@ -1,32 +1,32 @@
 ---
-title: Submitting Bugs
+title: Envío de errores
 ---
 
-# Describe your Issue
+# Describe tu problema
 
-- *What is not working?*
-- *Does downgrading package X fix the issue?*
-- *Use the search function for equal issues*
-- *Have you made modifications on your own?*
-  - Example: `Adding an additional flag in a modprobe file`
+- *¿Qué no está funcionando?*
+- *¿Soluciona el problema la degradación del paquete X?*
+- *Utiliza la función de búsqueda para encontrar problemas similares*
+- *¿Has realizado modificaciones por tu cuenta?*
+  - Ejemplo: `Añadir una bandera adicional en un archivo modprobe`
 
-# Provide Logs
+# Proporciona registros
 
-CachyOS provides a great tool to gather logs from the system called `cachyos-bugreport.sh`.
-This tool will collect logs from:
+CachyOS ofrece una excelente herramienta para recopilar registros del sistema llamada `cachyos-bugreport.sh`.
+Esta herramienta recopilará registros de:
 - dmesg
 - journalctl
-- inxi `(To collect hardware information)`
+- inxi `(Para recopilar información del hardware)`
 
-When the logs are collected, the user will be prompted to decide whether to upload them to our paste website.
+Cuando se recopilen los registros, se preguntará al usuario si desea subirlos a nuestro sitio web de pegado.
 
-**Run the following command in the terminal, and post the link with the bugs into the topic:**
+**Ejecuta el siguiente comando en la terminal y publica el enlace con los errores en el tema:**
 ```sh
 sudo cachyos-bugreport.sh
 ```
 
-# Links for submitting report
+# Enlaces para enviar informes
 
 - Github: <https://github.com/CachyOS/distribution>
-- Forum: <https://discuss.cachyos.org/c/feedback/bugreports/10>
-- Discord: [Support Channel](https://discord.com/channels/862292009423470592/862294383470051348)
+- Foro: <https://discuss.cachyos.org/c/feedback/bugreports/10>
+- Discord: [Canal de soporte](https://discord.com/channels/862292009423470592/862294383470051348)

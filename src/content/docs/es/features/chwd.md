@@ -1,32 +1,32 @@
 ---
-title: CachyOS Hardware Detection
-description: Hardware Detection and Configuration for CachyOS
+title: Detección de Hardware de CachyOS
+description: Detección y Configuración de Hardware para CachyOS
 ---
 
-[CachyOS Hardware Detection](https://github.com/CachyOS/chwd/) or better known as **`chwd`** enables us to power a variety of hardware by installing the necessary
-packages and drivers for the running system. This includes systems running NVIDIA's graphics cards, T2 Macbooks and handheld devices such as Steam Deck and ROG Ally.
+[CachyOS Hardware Detection](https://github.com/CachyOS/chwd/) o más conocido como **`chwd`** nos permite utilizar diversos tipos de hardware instalando los paquetes
+y controladores necesarios para el sistema en ejecución. Esto incluye sistemas con tarjetas gráficas NVIDIA, Macbooks T2 y dispositivos portátiles como Steam Deck y ROG Ally.
 
-## Usage
+## Uso
 
-**`chwd`** is typically ran during installation time to provide the necessary packages for the system. However, it is also possible
-to use it post-install.
+**`chwd`** normalmente se ejecuta durante la instalación para proporcionar los paquetes necesarios para el sistema. Sin embargo, también es posible
+usarlo después de la instalación.
 
-### Auto Configuration
+### Configuración Automática
 
-**`chwd`** supports installing and configuring necessary drivers and packages so that the system can work at optimal conditions.
+**`chwd`** permite instalar y configurar los controladores y paquetes necesarios para que el sistema funcione en condiciones óptimas.
 
 ```sh
 ❯ sudo chwd -a
 ```
 
-### Installing a profile
+### Instalación de un perfil
 
-An alternative to the above method is to install each specific profile.
+Una alternativa al método anterior es instalar cada perfil específico.
 
-```sh title='List all available profiles'
+```sh title='Listar todos los perfiles disponibles'
 ❯ chwd --list-all
 ╭─────────────────────────┬─────────╮
-│ Name                    ┆ NonFree │
+│ Nombre                  ┆ NonFree │
 ╞═════════════════════════╪═════════╡
 │ nvidia-open-dkms.prime  ┆ true    │
 ├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌┤
@@ -44,34 +44,34 @@ An alternative to the above method is to install each specific profile.
 ╰─────────────────────────┴─────────╯
 ```
 
-```sh title='Installing a chwd profile'
+```sh title='Instalar un perfil chwd'
 ❯ sudo chwd -i amd
-> Installing amd ...
+> Instalando amd ...
 
-> Successfully installed amd
+> amd instalado correctamente
 ```
 
-### Others
+### Otros
 
-Consult the help output of **`chwd`** for command syntax and other usage.
+Consulta la ayuda de **`chwd`** para conocer la sintaxis de los comandos y otros usos.
 
 ```sh
 ❯ chwd --help
-Usage: chwd [OPTIONS]
+Uso: chwd [OPCIONES]
 
-Options:
-  -i, --install <profile>          Install profile
-  -r, --remove <profile>           Remove profile
-  -d, --detail                     Show detailed info for listings
-  -f, --force                      Force reinstall
-      --list-installed             List installed kernels
-      --list                       List available profiles for all devices
-      --list-all                   List all profiles
-  -a, --autoconfigure [<classid>]  Autoconfigure
-      --ai_sdk                     Toggle AI SDK profiles
-      --pmcachedir <PMCACHEDIR>    [default: /var/cache/pacman/pkg]
-      --pmconfig <PMCONFIG>        [default: /etc/pacman.conf]
-      --pmroot <PMROOT>            [default: /]
-  -h, --help                       Print help
-  -V, --version                    Print version
+Opciones:
+  -i, --install <perfil>           Instalar perfil
+  -r, --remove <perfil>            Eliminar perfil
+  -d, --detail                     Mostrar información detallada en los listados
+  -f, --force                      Forzar reinstalación
+      --list-installed             Listar kernels instalados
+      --list                       Listar perfiles disponibles para todos los dispositivos
+      --list-all                   Listar todos los perfiles
+  -a, --autoconfigure [<classid>]  Autoconfigurar
+      --ai_sdk                     Alternar perfiles AI SDK
+      --pmcachedir <PMCACHEDIR>    [predeterminado: /var/cache/pacman/pkg]
+      --pmconfig <PMCONFIG>        [predeterminado: /etc/pacman.conf]
+      --pmroot <PMROOT>            [predeterminado: /]
+  -h, --help                       Mostrar ayuda
+  -V, --version                    Mostrar versión
 ```

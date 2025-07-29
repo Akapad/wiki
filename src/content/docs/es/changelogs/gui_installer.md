@@ -1,252 +1,252 @@
 ---
-title: GUI Installer Changelogs
-description: Changelogs of Calamares and the GUI Live ISO
+title: Registros de cambios del instalador GUI
+description: Registros de cambios de Calamares y la ISO Live con GUI
 ---
 25.07
 ----
-**Features:**
--   **Shell**: The user shell can be now choosen at installation time between fish, zsh and bash. Fish still stays to be default enabled. 
--   **chwd**: Install plasma-x11 for legacy NVIDIA Drivers
--   **Netinstall**: Added fwupd to KDE Plasma and Gnome
--   **mesa-git**: Added support for AMD Anti Lag
--   **firefox**: Introduced an alternative firefox called "firefox-pure", which includes improvement with the userjs profile. Additionally there has been "cachyos-firefox-settings" added, which can be installed on top of firefox.
+**Características:**
+-   **Shell**: El shell del usuario ahora se puede elegir durante la instalación entre fish, zsh y bash. Fish sigue siendo la opción predeterminada.
+-   **chwd**: Instala plasma-x11 para controladores NVIDIA antiguos
+-   **Netinstall**: Se añadió fwupd a KDE Plasma y Gnome
+-   **mesa-git**: Se añadió soporte para AMD Anti Lag
+-   **firefox**: Se introdujo una alternativa llamada "firefox-pure", que incluye mejoras con el perfil userjs. Además, se ha añadido "cachyos-firefox-settings", que se puede instalar sobre firefox.
 -   **Proton-CachyOS**:
-    -   Imported upstream wine-wayland commits
-    -   Added "PROTON_FSR4_UPGRADE" env variable, which will automatically download the latest FSR4 DLL and then replace it for an automatic upgrade on FSR 3.1 supported games
-    -   Added many Wayland-related patches from upstream Wine that were released after Wine 10.0.
-    -   added patches to help with better anticheat integration. Thanks to NelloKudo
-    -   Added patches for AMD's Anti Lag 2 for vkd3d-proton and wine
-    -   Updated umu-protonfixes to latest commit
+  -   Importados commits de wine-wayland
+  -   Añadida la variable de entorno "PROTON_FSR4_UPGRADE", que descargará automáticamente la última DLL de FSR4 y la reemplazará para una actualización automática en juegos compatibles con FSR 3.1
+  -   Añadidos muchos parches relacionados con Wayland del Wine upstream que se lanzaron después de Wine 10.0
+  -   Añadidos parches para ayudar con una mejor integración de anticheat. Gracias a NelloKudo
+  -   Añadidos parches para AMD's Anti Lag 2 para vkd3d-proton y wine
+  -   Actualizado umu-protonfixes al último commit
 
-**Fixes:**
--   **Keyring**: Improved the handling of the keyring installation to avoid issues and do several retries.
--   **systemd-oomd**: Disabled systemd-oomd, since it had problems handling this together with le9 and killed applications way to early
+**Correcciones:**
+-   **Keyring**: Mejorado el manejo de la instalación del keyring para evitar problemas y realizar varios reintentos.
+-   **systemd-oomd**: Desactivado systemd-oomd, ya que tenía problemas junto con le9 y cerraba aplicaciones demasiado pronto
 
-**Changelog for Handheld Edition:**
--   **handheld-settings**: Imported several tweaks of SteamOS to the Handheld Edition
--   **pipewire**: Set minimum quantum to 256
--   **SteamDeck-OLED**: Install galileo-mura for Steam Deck OLED
--   **Lenovo Legion Go S**: Added support for the Lenovo Legion Go S
+**Registro de cambios para la Edición Handheld:**
+-   **handheld-settings**: Importados varios ajustes de SteamOS a la Edición Handheld
+-   **pipewire**: Establecido quantum mínimo a 256
+-   **SteamDeck-OLED**: Instalación de galileo-mura para Steam Deck OLED
+-   **Lenovo Legion Go S**: Añadido soporte para Lenovo Legion Go S
 
 25.05
 ----
-**Features:**
--   **ISO**: Added automatic detection during ISO boot to identify the system's NVIDIA GPU and load the appropriate module (e.g., nvidia-open, nvidia), providing better support for 10xx series and older.
--   **Plymouth**: Added a new Plymouth animation.
-    -   Thanks to Eren ([https://github.com/erenyldz89](https://github.com/erenyldz89)) for working on this!
--   **Browser**: Cachy-Browser has been deprecated. We now provide Firefox as the default preinstalled browser. A guide to migrate profiles to Firefox (and its forks) can be found here: [https://wiki.cachyos.org/support/faq/#migrating-your-profile-from-cachy-browser-to-firefox](https://wiki.cachyos.org/support/faq/#migrating-your-profile-from-cachy-browser-to-firefox)
--   **netinstall**: Added kcalc, filelight, plymouth-kcm, and kio-admin to the KDE installation.
--   **mkinitcpio**: Disabled fallback initramfs by default. This will save a significant amount of space.
--   **Mirrors**: Added a new 10 Gbps mirror in Bangladesh. Thanks to Limda for hosting this!
+**Características:**
+-   **ISO**: Añadida detección automática durante el arranque de la ISO para identificar la GPU NVIDIA del sistema y cargar el módulo apropiado (p. ej., nvidia-open, nvidia), proporcionando mejor soporte para series 10xx y anteriores.
+-   **Plymouth**: Añadida una nueva animación de Plymouth.
+  -   Gracias a Eren ([https://github.com/erenyldz89](https://github.com/erenyldz89)) por trabajar en esto!
+-   **Navegador**: Cachy-Browser ha sido deprecado. Ahora proporcionamos Firefox como navegador preinstalado por defecto. Hay una guía para migrar perfiles a Firefox (y sus derivados) aquí: [https://wiki.cachyos.org/support/faq/#migrating-your-profile-from-cachy-browser-to-firefox](https://wiki.cachyos.org/support/faq/#migrating-your-profile-from-cachy-browser-to-firefox)
+-   **netinstall**: Añadidos kcalc, filelight, plymouth-kcm y kio-admin a la instalación de KDE.
+-   **mkinitcpio**: Desactivado el initramfs de respaldo por defecto. Esto ahorrará una cantidad significativa de espacio.
+-   **Mirrors**: Añadido un nuevo mirror de 10 Gbps en Bangladesh. ¡Gracias a Limda por alojarlo!
 -   **Proton**:
-    -   Rebased almost all patches from **Proton CachyOS 9.0**.
-    -   Enabled the Wayland driver for Steam Linux Runtime builds. Enable with `PROTON_ENABLE_WAYLAND=1`. Thanks to [GloriousEggroll](https://github.com/GloriousEggroll) for making it happen.
-    -   Added many Wayland-related patches from upstream Wine that were released after Wine 10.0.
-    -   Fixed various issues with the Wayland driver and Vulkan games. Thanks to [Etaash-mathamsetty](https://github.com/Etaash-mathamsetty) for all the hard work.
-    -   Added a stub implementation for `amdxc64.dll` to enable FSR4. Use `FSR4_UPGRADE=1` to upgrade FSR3.1 games to FSR4. Thanks again to [Etaash-mathamsetty](https://github.com/Etaash-mathamsetty). Instructions: [https://github.com/Etaash-mathamsetty/wine-builds/releases/tag/fsr4](https://github.com/Etaash-mathamsetty/wine-builds/releases/tag/fsr4)
-    -   Added DualSense-related patches for more complete audio device detection functionality for wired sound-based haptics. Some games that relied on that specific behaviour should now have that functionality. Thanks to [ClearlyClaire](https://github.com/ClearlyClaire) for the original patches and [Exotic0015](https://github.com/Exotic0015) for looking into it since **Proton CachyOS 9.0**. Upstream: [https://gitlab.winehq.org/wine/wine/-/merge_requests/7238](https://gitlab.winehq.org/wine/wine/-/merge_requests/7238)
-    -   Removed the Dragon Age Inquisition patch as it was not working. Please use **Proton CachyOS 9.0** for now with that game.
--   **GRUB**: Added a new GRUB theme. Thanks to [diegons490](https://github.com/diegons490/cachyos-grub-theme).
+  -   Rebasados casi todos los parches de **Proton CachyOS 9.0**.
+  -   Habilitado el driver de Wayland para compilaciones Steam Linux Runtime. Activar con `PROTON_ENABLE_WAYLAND=1`. Gracias a [GloriousEggroll](https://github.com/GloriousEggroll) por hacerlo posible.
+  -   Añadidos muchos parches relacionados con Wayland del Wine upstream lanzados después de Wine 10.0.
+  -   Corregidos varios problemas con el driver de Wayland y juegos Vulkan. Gracias a [Etaash-mathamsetty](https://github.com/Etaash-mathamsetty) por todo el arduo trabajo.
+  -   Añadida una implementación provisional para `amdxc64.dll` para habilitar FSR4. Usa `FSR4_UPGRADE=1` para actualizar juegos FSR3.1 a FSR4. Gracias de nuevo a [Etaash-mathamsetty](https://github.com/Etaash-mathamsetty). Instrucciones: [https://github.com/Etaash-mathamsetty/wine-builds/releases/tag/fsr4](https://github.com/Etaash-mathamsetty/wine-builds/releases/tag/fsr4)
+  -   Añadidos parches relacionados con DualSense para una detección más completa de dispositivos de audio para háptica basada en sonido por cable. Algunos juegos que dependían de ese comportamiento específico ahora deberían tener esa funcionalidad. Gracias a [ClearlyClaire](https://github.com/ClearlyClaire) por los parches originales y [Exotic0015](https://github.com/Exotic0015) por investigarlo desde **Proton CachyOS 9.0**. Upstream: [https://gitlab.winehq.org/wine/wine/-/merge_requests/7238](https://gitlab.winehq.org/wine/wine/-/merge_requests/7238)
+  -   Eliminado el parche de Dragon Age Inquisition ya que no funcionaba. Por favor, usa **Proton CachyOS 9.0** por ahora con ese juego.
+-   **GRUB**: Añadido un nuevo tema para GRUB. Gracias a [diegons490](https://github.com/diegons490/cachyos-grub-theme).
 
-**Fixes:**
--   **Mirrors**: Fixed an issue where users from Russia could no longer install. This was mitigated by not using CDN77, which Russia had started to block.
--   **kde-settings**: Disabled the Discover icon in the taskbar.
--   **ddcutil**: Pushed the ddcutil 2.2.1 pre-release to fix an issue where AMD GPUs were freezing when watching YouTube videos.
+**Correcciones:**
+-   **Mirrors**: Solucionado un problema donde los usuarios de Rusia ya no podían instalar. Esto se mitigó al no usar CDN77, que Rusia había comenzado a bloquear.
+-   **kde-settings**: Deshabilitado el icono de Discover en la barra de tareas.
+-   **ddcutil**: Publicada la versión preliminar de ddcutil 2.2.1 para solucionar un problema donde las GPUs AMD se congelaban al ver vídeos de YouTube.
 
-**Changelog for Handheld Edition:**
--   **os-branch**: Game Mode now correctly shows that CachyOS Linux is being used.
--   **audio**: Updated convolver profiles.
--   **steamos-manager**: This is used for GPU clock and TDP management, BIOS/dock updates, storage device maintenance, external storage formatting, and battery charge limit for the Steam Deck.
--   **steamos-powerbuttond**: This component replaces the standard powerbuttond for a better sleep experience.
--   **jupiter-hw-support**: Updated to 20250501.
+**Registro de cambios para la Edición Handheld:**
+-   **os-branch**: El Modo Juego ahora muestra correctamente que se está utilizando CachyOS Linux.
+-   **audio**: Actualizados los perfiles de convolver.
+-   **steamos-manager**: Se utiliza para la gestión de reloj de GPU y TDP, actualizaciones de BIOS/dock, mantenimiento de dispositivos de almacenamiento, formateo de almacenamiento externo y límite de carga de batería para Steam Deck.
+-   **steamos-powerbuttond**: Este componente reemplaza el powerbuttond estándar para una mejor experiencia de suspensión.
+-   **jupiter-hw-support**: Actualizado a 20250501.
 
 25.04
 ----
 
-**Features:**
-- **occt**: Added OCCT to the ISO to have a live environment for stress testing
-  - Thanks to Marek for providing this idea!
+**Características:**
+- **occt**: Añadido OCCT a la ISO para tener un entorno en vivo para pruebas de estrés
+  - ¡Gracias a Marek por proporcionar esta idea!
 
-**Fixes:**
-- **kernel**: Fixes module crash on Asus laptops
-- **limine**: Limine now has mkinitcpio-limine-hook installed and will automatically create bootloader entries
+**Correcciones:**
+- **kernel**: Corregido el fallo de módulo en portátiles Asus
+- **limine**: Limine ahora tiene mkinitcpio-limine-hook instalado y creará automáticamente entradas del gestor de arranque
 
 
-**Changelog for Handheld Edition:**
-- **audio**: Added audio profiles for ROG Ally X and Legion Go
-- **gamescope**: Replaced gamescope-plus with upstream gamescope
-
+**Registro de cambios para la Edición Handheld:**
+- **audio**: Añadidos perfiles de audio para ROG Ally X y Legion Go
+- **gamescope**: Reemplazado gamescope-plus con gamescope upstream
 
 25.03
 ----
 
-**Features**:
-- **Bootloader**: Added support for Limine bootloader
-- **Bootloader**: Added support for automatic snapshots for Limine bootloader
-- **Samba**: Added "cachyos-samba-settings" package to easily set up a Samba mount
-- **NVIDIA**: Re-enabled GSP Firmware for the closed source NVIDIA module
-- **Kernel**: Added support for the Asus Armoury driver
-- **Secure Boot**: Improved "sbctl-batch-sign" script to sign only wanted files
-- **udev**: Reverted using ntfs3 as the default driver for NTFS partitions
-  - Info: Using the NTFS3 Kernel driver as default resulted in issues for some users. Therefore, we reverted it again.
-- **wine**: Wine and Wine-Staging defaulting now to WoW64 and NTSync
-- **scx-manager**: Moved out sched-ext GUI manager from Kernel Manager to its own application
-- **Hardware Support**: Added support for RDNA4, RTX 5070 Ti, and 5070.
-- **Settings**: Added DLSS Swapper Support - this is a script, which automatically updates and uses the latest dlss version and preset
-- **Package Updates**: linux-cachyos 6.14.0, NVIDIA 570.133.07, Gnome 48, Plasma 6.3.3, mesa 25.0.2, linux-api-headers 6.14.0, linux-tools 6.14.0
+**Características**:
+- **Gestor de arranque**: Añadido soporte para el gestor de arranque Limine
+- **Gestor de arranque**: Añadido soporte para instantáneas automáticas para el gestor de arranque Limine
+- **Samba**: Añadido paquete "cachyos-samba-settings" para configurar fácilmente un punto de montaje Samba
+- **NVIDIA**: Reactivado el firmware GSP para el módulo cerrado de NVIDIA
+- **Kernel**: Añadido soporte para el controlador Asus Armoury
+- **Secure Boot**: Mejorado el script "sbctl-batch-sign" para firmar solo los archivos deseados
+- **udev**: Revertido el uso de ntfs3 como controlador predeterminado para particiones NTFS
+  - Información: Usar el controlador de Kernel NTFS3 como predeterminado causó problemas para algunos usuarios. Por lo tanto, lo hemos revertido.
+- **wine**: Wine y Wine-Staging ahora usan WoW64 y NTSync por defecto
+- **scx-manager**: Movido el administrador GUI de sched-ext del Administrador de Kernel a su propia aplicación
+- **Soporte de Hardware**: Añadido soporte para RDNA4, RTX 5070 Ti y 5070
+- **Ajustes**: Añadido soporte para DLSS Swapper - este es un script que actualiza y usa automáticamente la última versión y preajuste de dlss
+- **Actualizaciones de paquetes**: linux-cachyos 6.14.0, NVIDIA 570.133.07, Gnome 48, Plasma 6.3.3, mesa 25.0.2, linux-api-headers 6.14.0, linux-tools 6.14.0
 
-**Fixes**:
-- **initcpiocfg**: Removed "crc32c-intel" module adding to mkinitcpio - This has been deprecated and now defaults to the "crc32c" module
-- **chwd**: T2 MacBook disable offloading the brcmfmac
-- **chwd**: Do not install NVIDIA 390.xx driver for laptops
+**Correcciones**:
+- **initcpiocfg**: Eliminada la adición del módulo "crc32c-intel" a mkinitcpio - Ha sido obsoleto y ahora se usa por defecto el módulo "crc32c"
+- **chwd**: MacBook T2 desactivar la descarga del brcmfmac
+- **chwd**: No instalar el controlador NVIDIA 390.xx para portátiles
 
 25.02
 ----
 
-**Features**:
+**Características**:
 - **Kernel**:
-  - Propeller Optimization is now applied to the default **linux-cachyos** kernel for all available architectures.
-    - **Note**: In combination with AutoFDO, this can improve performance by around 10%, depending on the workload.
-- **NVIDIA**: Added support for the Blackwell Architecture.
-- **ISO**: Using the nvidia-open module as the default to provide Blackwell support. Users with GPUs older than Turing should use the first or fallback boot option.
-- **Settings**: Enabled tap-to-click for X11 sessions by default.
-- **udev**: Use ntfs3 as the default driver for NTFS partitions.
-- **game-performance**: Disabled the screensaver while running games.
-- **kernel-manager (sched-ext)**: Added support for server mode.
-- **kernel**: Added fixes for the AMD preferred core feature.
-- **chwd**: Re-added the workaround for RTD3.
-- **Package Updates**: linux-cachyos 6.13.0, NVIDIA 570.86.16, LLVM 19, glibc 2.41, mesa 24.3.4.
+  - La optimización Propeller ahora se aplica al kernel **linux-cachyos** predeterminado para todas las arquitecturas disponibles.
+  - **Nota**: En combinación con AutoFDO, esto puede mejorar el rendimiento alrededor de un 10%, dependiendo de la carga de trabajo.
+- **NVIDIA**: Añadido soporte para la arquitectura Blackwell.
+- **ISO**: Usando el módulo nvidia-open como predeterminado para proporcionar soporte a Blackwell. Los usuarios con GPUs más antiguas que Turing deberían usar la primera opción de arranque o la opción de respaldo.
+- **Ajustes**: Habilitado tap-to-click para sesiones X11 por defecto.
+- **udev**: Usar ntfs3 como controlador predeterminado para particiones NTFS.
+- **game-performance**: Desactivado el protector de pantalla mientras se ejecutan juegos.
+- **kernel-manager (sched-ext)**: Añadido soporte para modo servidor.
+- **kernel**: Añadidas correcciones para la función de núcleo preferido de AMD.
+- **chwd**: Vuelto a añadir la solución temporal para RTD3.
+- **Actualizaciones de paquetes**: linux-cachyos 6.13.0, NVIDIA 570.86.16, LLVM 19, glibc 2.41, mesa 24.3.4.
 
-**Fixes**:
-- **chwd**: Fixed an issue where hybrid laptops with Intel and NVIDIA hardware could not use their GPU in DaVinci Resolve.
-- **glibc**: Added a fix for CVE-2025-0395.
-- **kernel-manager**: Attempted to install the prebuilt NVIDIA module, if available for the default Arch kernel.
-- **kernel-manager**: Added an extra check to avoid overwriting the value in case a module is not available.
+**Correcciones**:
+- **chwd**: Solucionado un problema donde los portátiles híbridos con hardware Intel y NVIDIA no podían usar su GPU en DaVinci Resolve.
+- **glibc**: Añadida una corrección para CVE-2025-0395.
+- **kernel-manager**: Intentar instalar el módulo NVIDIA precompilado, si está disponible para el kernel Arch predeterminado.
+- **kernel-manager**: Añadida una comprobación adicional para evitar sobrescribir el valor en caso de que un módulo no esté disponible.
 
-**Changelog for Handheld Edition:**
-- **hooks**: Allowed the use of natively compiled Proton again.
-- **misc**: Several updates and fixes.
+**Registro de cambios para la Edición Handheld:**
+- **hooks**: Permitido el uso de Proton compilado nativamente de nuevo.
+- **misc**: Varias actualizaciones y correcciones.
 
 24.12
 ----
 
-**Features**:
+**Características**:
 - Kernel:
-  - AutoFDO is now applied to the default `linux-cachyos` kernel for all available architectures
-    - **Note**: Performance improvements are minimal for now due to current limitations. Merging profiles requires LLVM 19, and Propeller Optimization depends on it. We anticipate LLVM 19 and more optimized profiles to be available by the end of the year, following Arch Linux's adoption of LLVM 19
-- chwd: Rusticl is now configured correctly
-- chwd: improved error logging during hooks calls
-- chwd: fixed VAAPI drivers selection
-- cachyos-settings: Added a script to facilitate running applications via Zink
-- Sysctl Configuration: Reworked and optimized several settings
-- Kernel Manager: Added support for `scx_loader`, enabling native scheduler switching
-- Installer: Bluetooth service is now enabled by default
+  - AutoFDO ahora se aplica al kernel predeterminado `linux-cachyos` para todas las arquitecturas disponibles
+  - **Nota**: Las mejoras de rendimiento son mínimas por ahora debido a limitaciones actuales. La fusión de perfiles requiere LLVM 19, y la optimización Propeller depende de ello. Anticipamos que LLVM 19 y perfiles más optimizados estarán disponibles a finales de año, tras la adopción de LLVM 19 por parte de Arch Linux
+- chwd: Rusticl ahora está configurado correctamente
+- chwd: mejorado el registro de errores durante las llamadas a hooks
+- chwd: corregida la selección de controladores VAAPI
+- cachyos-settings: Añadido un script para facilitar la ejecución de aplicaciones a través de Zink
+- Configuración Sysctl: Reelaboradas y optimizadas varias configuraciones
+- Kernel Manager: Añadido soporte para `scx_loader`, permitiendo el cambio nativo de programador
+- Instalador: El servicio Bluetooth ahora está habilitado por defecto
 - Netinstall:
-  - Added `wireless-regdb` to the installed packages
-    - This configures the connection to use appropriate channels and unlocks additional channels, potentially improving internet speed
-    - **Note**: A generic region is set by default; customizing it to your region is recommended for optimal performance
-- **Package Updates**: NVIDIA 565.77, linux-cachyos 6.12.6, mesa 24.3.2, scx-scheds 1.0.8, zfs 2.2.7
+  - Añadido `wireless-regdb` a los paquetes instalados
+  - Esto configura la conexión para usar canales apropiados y desbloquea canales adicionales, potencialmente mejorando la velocidad de Internet
+  - **Nota**: Una región genérica se establece por defecto; se recomienda personalizarla a tu región para un rendimiento óptimo
+- **Actualizaciones de paquetes**: NVIDIA 565.77, linux-cachyos 6.12.6, mesa 24.3.2, scx-scheds 1.0.8, zfs 2.2.7
 
-**Bug Fixes**
-- Installer: Installation logs no longer spawn debug terminal windows
-- Partition Management:
-  - Proper `umask` settings ensure `/boot` is inaccessible without sufficient permissions
-- Launch Installer: Internet connectivity checks have been fixed
+**Correcciones de errores**
+- Instalador: Los registros de instalación ya no generan ventanas de terminal de depuración
+- Gestión de particiones:
+  - La configuración adecuada de `umask` asegura que `/boot` sea inaccesible sin permisos suficientes
+- Iniciar Instalador: Se han corregido las comprobaciones de conectividad a Internet
 
-**Changelog Handheld Edition:**
-- Updated handheld related packages
-- Fixed issue with the power profile handling
-- Added support for WiFi 6
+**Registro de cambios para la Edición Handheld:**
+- Actualizados paquetes relacionados con dispositivos portátiles
+- Solucionado problema con la gestión de perfiles de energía
+- Añadido soporte para WiFi 6
 
 24.11
 ----
 
-**Features:**
-- thp-shrinker: Put max_ptes_none value to 80% for zero filled pages. This will reduce the memory usage for when THP always is used, while maintaining the same performance
-- NVIDIA: GSP Firmware gets now automatically disabled, if the users switches on their own to the closed driver
-- chwd: NVIDIA: nvidia-powerd services gets enabled for laptops, to reach the most available tdp
-- proton-cachyos: DLSS Frame Generation is now working. This is also expected to work in the future in the upstream proton
-- kernel: AMD Cache Optimizer is now applied. Users with dual x3d CCD's cpus can now switch between having frequency or cache cores preferred
-- kernel: amd-pstate: Backported amd-pstate performance fixes for Strix Point
-- kernel: Added upstream fixes for the tdp issues on amd rdna2 and rdna3 gpus
-- kernel: Added timing fixes for displays with 5120x1440x240 configuration
-- kernel: Experimental AutoFDO optimized kernel in the repository under "linux-cachyos-autofdo"
-- ISO: Added check, if user running handheld edition and warn then, if they are starting the installation on an unsupported device
-- ISO: Added check, if the user is using the latest ISO, if not warn them
+**Características:**
+- thp-shrinker: Establecido el valor max_ptes_none a 80% para páginas con ceros. Esto reducirá el uso de memoria cuando se utiliza THP always, manteniendo el mismo rendimiento
+- NVIDIA: El firmware GSP ahora se desactiva automáticamente si el usuario cambia por su cuenta al controlador cerrado
+- chwd: NVIDIA: el servicio nvidia-powerd se habilita para portátiles, para alcanzar el tdp disponible máximo
+- proton-cachyos: La generación de fotogramas DLSS ya funciona. Se espera que también funcione en el futuro en el proton upstream
+- kernel: Se ha aplicado el optimizador de caché AMD. Los usuarios con CPUs de doble CCD x3d ahora pueden cambiar entre preferir núcleos de frecuencia o caché
+- kernel: amd-pstate: Retroportados arreglos de rendimiento de amd-pstate para Strix Point
+- kernel: Añadidas correcciones upstream para los problemas de tdp en GPUs AMD rdna2 y rdna3
+- kernel: Añadidas correcciones de sincronización para pantallas con configuración 5120x1440x240
+- kernel: Kernel experimental optimizado con AutoFDO disponible en el repositorio como "linux-cachyos-autofdo"
+- ISO: Añadida comprobación si el usuario ejecuta la edición handheld y advertirle si está iniciando la instalación en un dispositivo no compatible
+- ISO: Añadida comprobación si el usuario está utilizando la última ISO, si no, advertirle
 
-**Bug Fixes:**
-- refind: partitioning: changed from 3 way partiton layout to 2 way
-- netinstall: added kdeplasma-addons to the Plasma installation
-- calamares: Fixed a issue, while partitioning with a swap partition
+**Correcciones de errores:**
+- refind: particionamiento: cambiado de diseño de partición de 3 vías a 2 vías
+- netinstall: añadido kdeplasma-addons a la instalación de Plasma
+- calamares: Solucionado un problema durante el particionamiento con una partición swap
 
-**Changelog Handheld Edition:**
-- Rog Ally X Support should have been improved
+**Registro de cambios para la Edición Handheld:**
+- El soporte para Rog Ally X debería haberse mejorado
 
 24.10
 ----
 
-**Features:**
-- Package Updates: linux-cachyos 6.11.1, mesa 24.2.4, scx-scheds 1.0.5, python 3.12.7
+**Características:**
+- Actualizaciones de paquetes: linux-cachyos 6.11.1, mesa 24.2.4, scx-scheds 1.0.5, python 3.12.7
 
-**Bug Fixes:**
-- sddm: Pulled in newer sddm to fix wayland session logins
-- ISO: Added xf86-video-amdgpu to fix graphical session loading on some setups
-- chwd: Fixed reinstallation of profiles
+**Correcciones de errores:**
+- sddm: Incorporado sddm más nuevo para arreglar inicios de sesión en sesiones wayland
+- ISO: Añadido xf86-video-amdgpu para corregir la carga de sesión gráfica en algunas configuraciones
+- chwd: Corregida la reinstalación de perfiles
 
 24.09
 ----
 
-**Features:**
-- Packages: Optimized a bunch of packages with PGO, like LLVM, Clang, svt-av1, and nodejs. This yielded, for example, a 10% faster Clang compiler
-- Repository: The repository is now synced and updated more frequently, meaning there will be even less delay. The sync interval has been decreased from every 3 hours to every hour.
-- Repository: Starting from 27.09.2024, packages compiled with -fpic will automatically enable -fno-semantic-interposition. This can provide a performance improvement for many packages.
-- zlib-ng: Is now used as a replacement for zlib
-- sddm: On the KDE Installation, sddm will now default to Wayland as the compositor. # Provide Migration changes in release post
-- cachyos-settings: NetworkManager now uses systemd-resolved as the backend, which helps with DNS caching
-- cachyos-settings: Use time.google.com as the timesync server to avoid issues with timesync on some setups
-- gcc: Added fixes for the tuning of znver5
-- gcc: Cherry-picked patches and flags from Clear Linux
-- glibc: Added "evex" patches as well as cherry-picks from Clear Linux
-- wiki: The Wiki received many new additions and reworks
-- chwd: Simplified device handling
-- chwd: All profiles are now specifically designed for PCI devices
-- chwd: Add --autoconfigure to automatically handle the driver installation
-- Package Updates: linux-cachyos 6.11.0, mesa 24.2.3, Plasma 6.1.5, NVIDIA 560.35.03, calamares 3.3.10, QT 6.7.3
+**Características:**
+- Paquetes: Optimizados varios paquetes con PGO, como LLVM, Clang, svt-av1 y nodejs. Esto produjo, por ejemplo, un compilador Clang un 10% más rápido
+- Repositorio: El repositorio ahora se sincroniza y actualiza con más frecuencia, lo que significa que habrá aún menos retraso. El intervalo de sincronización se ha reducido de cada 3 horas a cada hora
+- Repositorio: A partir del 27.09.2024, los paquetes compilados con -fpic habilitarán automáticamente -fno-semantic-interposition. Esto puede proporcionar una mejora de rendimiento para muchos paquetes
+- zlib-ng: Ahora se usa como reemplazo para zlib
+- sddm: En la instalación de KDE, sddm ahora usará Wayland como compositor por defecto
+- cachyos-settings: NetworkManager ahora usa systemd-resolved como backend, lo que ayuda con el almacenamiento en caché DNS
+- cachyos-settings: Usar time.google.com como servidor de sincronización de tiempo para evitar problemas con la sincronización temporal en algunas configuraciones
+- gcc: Añadidas correcciones para el ajuste de znver5
+- gcc: Parches y flags seleccionados de Clear Linux
+- glibc: Añadidos parches "evex" y selecciones de Clear Linux
+- wiki: La Wiki recibió muchas nuevas adiciones y reestructuraciones
+- chwd: Simplificada la gestión de dispositivos
+- chwd: Todos los perfiles están ahora diseñados específicamente para dispositivos PCI
+- chwd: Añadido --autoconfigure para manejar automáticamente la instalación del controlador
+- Actualizaciones de paquetes: linux-cachyos 6.11.0, mesa 24.2.3, Plasma 6.1.5, NVIDIA 560.35.03, calamares 3.3.10, QT 6.7.3
 
-**Bug Fixes:**
-- Launch-Installer: Added fixes to sync the hardware clock before starting the installation
-- calamares: Added fix for unmounting the filesystem after installation
-- keyring: Clean up the keyring and recreate it before starting installation; this fixes rare keyring issues
-- sysctl: Core dumps have been enabled again
-- chwd: Removed `libva-nvidia-driver` from the PRIME profile to prevent potential conflicts and improve compatibility with software like Spectacle
-- cachyos-settings: Added workaround for GNOME Wayland crashes
-- cachyos-fish/zsh-config: Dropped wayland specific quirks
+**Correcciones de errores:**
+- Launch-Installer: Añadidas correcciones para sincronizar el reloj del hardware antes de iniciar la instalación
+- calamares: Añadida corrección para desmontar el sistema de archivos después de la instalación
+- keyring: Limpiar el anillo de claves y recrearlo antes de iniciar la instalación; esto soluciona problemas raros con el anillo de claves
+- sysctl: Los volcados de núcleo se han vuelto a habilitar
+- chwd: Eliminado `libva-nvidia-driver` del perfil PRIME para evitar posibles conflictos y mejorar la compatibilidad con software como Spectacle
+- cachyos-settings: Añadida solución alternativa para fallos de GNOME Wayland
+- cachyos-fish/zsh-config: Eliminadas peculiaridades específicas de wayland
 
-**Changelog for Handheld Edition:**
-- Ally/Ally X: HHD got replaced with inputplumber, since hhd does not use the kernel driver for it correctly, which results in issues.
-- Handheld related packages updated
+**Registro de cambios para la Edición Handheld:**
+- Ally/Ally X: HHD ha sido reemplazado con inputplumber, ya que hhd no usa correctamente el controlador del kernel para ello, lo que resulta en problemas
+- Actualizados paquetes relacionados con dispositivos portátiles
 
 24.08
 ----
 
-**Features:**
-- chwd: NVIDIA now uses the open module as default for supported cards
-- Desktop: Added Cosmic Desktop Environment to the installation options
-- NVIDIA: Latest 560 Beta driver is now the default; egl-wayland patched to fix crashes in Firefox and other applications
-- mirrors: CDN77 sponsored CachyOS with Object Storage featuring a worldwide cache, significantly improving connection speeds for users
-- mirrors: CachyOS now provides its own Arch Linux mirror to avoid syncing issues, set as default during installation along with fallback mirrors
-- SecureBoot: Introduced script and tutorial in the Wiki for easy Secure Boot support
-- cachy-chroot: Added auto-mount via fstab for simplified chrooting
-- cachy-chroot: Implemented support for LUKS Encryption
-- kernel-manager: Added support for setting sched-ext flags in the sched-ext configuration
-- kernel-manager: Introduced option to build nvidia-open
-- kernel-manager: Added option to remember last used options in configure page
-- Package Updates: linux-cachyos 6.10.5, mesa 24.2.0, Plasma 6.1.4, NVIDIA 560.31.02
+**Características:**
+- chwd: NVIDIA ahora usa el módulo abierto como predeterminado para tarjetas compatibles
+- Escritorio: Añadido el entorno de escritorio Cosmic a las opciones de instalación
+- NVIDIA: El último controlador beta 560 es ahora el predeterminado; egl-wayland parcheado para corregir fallos en Firefox y otras aplicaciones
+- mirrors: CDN77 patrocinó a CachyOS con almacenamiento de objetos con caché mundial, mejorando significativamente las velocidades de conexión para los usuarios
+- mirrors: CachyOS ahora proporciona su propio espejo de Arch Linux para evitar problemas de sincronización, establecido como predeterminado durante la instalación junto con espejos de respaldo
+- SecureBoot: Introducido script y tutorial en la Wiki para soporte fácil de Secure Boot
+- cachy-chroot: Añadido auto-montaje a través de fstab para simplificar el chroot
+- cachy-chroot: Implementado soporte para cifrado LUKS
+- kernel-manager: Añadido soporte para establecer flags de sched-ext en la configuración de sched-ext
+- kernel-manager: Introducida opción para compilar nvidia-open
+- kernel-manager: Añadida opción para recordar las últimas opciones utilizadas en la página de configuración
+- Actualizaciones de paquetes: linux-cachyos 6.10.5, mesa 24.2.0, Plasma 6.1.4, NVIDIA 560.31.02
 
-**Bug Fixes:**
-- chwd: Improved PRIME profile detection based on device name
-- chwd: Removed RTD3 workaround due to issues on some setups
-- cachyos-rate-mirrors: Disabled mirror ranking when running on Live ISO
+**Correcciones de errores:**
+- chwd: Mejorada la detección de perfiles PRIME basada en el nombre del dispositivo
+- chwd: Eliminada solución temporal para RTD3 debido a problemas en algunas configuraciones
+- cachyos-rate-mirrors: Desactivada la clasificación de espejos cuando se ejecuta en Live ISO
+- cachy-chroot: Corrige un error cuando una partición no tenía un fstype o uuid válido (ej. Partición de recuperación de Microsoft)
 - cachy-chroot: Fixes a crash when a partition didn't have a valid fstype or uuid (eg Microsoft Recovery Partition)
 - calamares: Refactored keyring initialization
 - kernel-manager: Fixed support for building custom pkgbase with LTO kernels and modules enabled

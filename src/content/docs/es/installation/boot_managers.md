@@ -1,94 +1,92 @@
 ---
-title: Offered Boot Managers
-description: Description and recommendations for the currently offered boot managers
+title: Gestores de arranque ofrecidos
+description: Descripción y recomendaciones para los gestores de arranque disponibles actualmente
 ---
 
-To offer the best experience across a range of devices, CachyOS currently offers the following boot managers: systemd-boot, rEFInd, GRUB and Limine.
-This wiki article will describe the feature set of each boot manager and also includes our recommendations for when choosing them. For
-configuration, please see [Boot Manager Configuration](/configuration/boot_manager_configuration).
+Para ofrecer la mejor experiencia en diversos dispositivos, CachyOS actualmente ofrece los siguientes gestores de arranque: systemd-boot, rEFInd, GRUB y Limine.
+Este artículo de la wiki describirá las características de cada gestor de arranque e incluye nuestras recomendaciones para elegir entre ellos. Para
+configuración, consulta [Configuración del Gestor de Arranque](/configuration/boot_manager_configuration).
 
 ## systemd-boot
 
-Part of systemd family, systemd-boot was created to be as simple as possible, therefore it only has support for UEFI based systems. This simple yet efficient design ensures it is reliable and fast. However this comes at the cost of advanced features supported by other boot managers.
+Como parte de la familia systemd, systemd-boot fue creado para ser lo más sencillo posible, por lo tanto solo tiene soporte para sistemas basados en UEFI. Este diseño simple pero eficiente asegura que sea fiable y rápido. Sin embargo, esto viene a costa de las características avanzadas que ofrecen otros gestores de arranque.
 
-### Pros
-- Very simple configuration.
-- Boot entries are separated into multiple files making it easier to manage.
+### Ventajas
+- Configuración muy sencilla.
+- Las entradas de arranque están separadas en múltiples archivos, lo que facilita su gestión.
 
-### Cons
- - Lacks proper support for BIOS/MBR.
- - Very barebones design and lacks any kind of theming or customization.
- - Config is not auto-generated unless configured to do so. CachyOS includes systemd-boot manager to offer auto-generated configuration.
- - Only able to read boot images on EFI supported filesystems (FAT, FAT16, FAT32).
- - Inability to find boot images on partitions other than its own.
- - Does not properly support Btrfs snapshot rollbacks due to requirement to store kernel images on the boot partition rather than the root filesystem.
+### Desventajas
+- Carece de soporte adecuado para BIOS/MBR.
+- Diseño muy básico y carece de cualquier tipo de tema o personalización.
+- La configuración no se genera automáticamente a menos que se configure para hacerlo. CachyOS incluye un gestor para systemd-boot que ofrece configuración generada automáticamente.
+- Solo puede leer imágenes de arranque en sistemas de archivos compatibles con EFI (FAT, FAT16, FAT32).
+- Incapacidad para encontrar imágenes de arranque en particiones distintas a la suya propia.
+- No soporta adecuadamente la reversión a instantáneas de Btrfs debido al requisito de almacenar imágenes del kernel en la partición de arranque en lugar del sistema de archivos raíz.
 
-### Recommendation
+### Recomendación
 
-Systemd-boot is the recommended and default boot manager for CachyOS. Choose this one if unsure.
+Systemd-boot es el gestor de arranque recomendado y predeterminado para CachyOS. Elige este si no estás seguro.
 
 ## rEFInd
 
-A fork of rEFIt, rEFInd was primarily made to make it easier for MacOS users to multi-boot. However rEFInd has evolved into being hardware agnostic making it a great choice for multi-booting on any system. The main draw of rEFInd is its ability to scan all storage devices at boot and correspondingly display entries for each OS/Kernel found.
+Como bifurcación de rEFIt, rEFInd se creó principalmente para facilitar el arranque múltiple a usuarios de MacOS. Sin embargo, rEFInd ha evolucionado para ser independiente del hardware, convirtiéndolo en una gran opción para el arranque múltiple en cualquier sistema. Lo más destacado de rEFInd es su capacidad para escanear todos los dispositivos de almacenamiento durante el arranque y mostrar entradas para cada SO/Kernel encontrado.
 
-### Pros
+### Ventajas
 
-- Autodetection of all operating systems and kernels on storage devices.
-- Little to no configuration required due to aforementioned auto-detection.
-- Much more graphical UI reminiscent of the MacOS Boot selector.
-- Great theming support
-- Optional touch screen support
-- Able to read boot images from EFI filesystems (FAT,FAT16,FAT32) as well as EXT4 and BTRFS. Support for other file systems can be added through installation of EFI drivers from the ``efifs`` package.
+- Detección automática de todos los sistemas operativos y kernels en los dispositivos de almacenamiento.
+- Poca o ninguna configuración requerida debido a la mencionada detección automática.
+- Interfaz de usuario mucho más gráfica que recuerda al selector de arranque de MacOS.
+- Gran soporte para temas.
+- Soporte opcional para pantalla táctil.
+- Capaz de leer imágenes de arranque desde sistemas de archivos EFI (FAT, FAT16, FAT32), así como EXT4 y BTRFS. El soporte para otros sistemas de archivos se puede añadir mediante la instalación de controladores EFI del paquete ``efifs``.
 
-### Cons
+### Desventajas
 
-- Does not support BIOS systems.
+- No soporta sistemas BIOS.
 
-### Recommendation
+### Recomendación
 
-rEFInd is the recommended boot manager for booting with multiple operating systems.
+rEFInd es el gestor de arranque recomendado para arrancar con múltiples sistemas operativos.
 
 ## GRUB
 
-GRUB is the oldest of the available boot managers. It has a very large feature
-set, works on almost every machine and is the most commonly used Linux boot
-manager. The following is a list of its main pros and cons.
+GRUB es el más antiguo de los gestores de arranque disponibles. Tiene un conjunto de características muy amplio, funciona en casi cualquier máquina y es el gestor de arranque para Linux más comúnmente utilizado. A continuación se muestra una lista de sus principales ventajas y desventajas.
 
-### Pros
-- Able to read boot images from almost all available Linux filesystems.
-- Widely used and very easy to find information online.
-- Able to decrypt encrypted boot partitions.
-- The only boot loader offered allowing it to boot BIOS machines.
-- Looks dated. However has great theme support to compensate.
+### Ventajas
+- Capaz de leer imágenes de arranque desde casi todos los sistemas de archivos Linux disponibles.
+- Ampliamente utilizado y muy fácil encontrar información en línea.
+- Capaz de descifrar particiones de arranque cifradas.
+- El único cargador de arranque ofrecido que permite arrancar máquinas BIOS.
+- Aspecto anticuado. Sin embargo, tiene gran soporte para temas para compensarlo.
 
-### Cons
-- Bloated due to needing to support much older hardware and needing lots of filesystem drivers.
-- Noticeably slower compared to systemd-boot, rEFInd and Limine.
+### Desventajas
+- Sobrecargado debido a la necesidad de dar soporte a hardware mucho más antiguo y a la necesidad de controladores para muchos sistemas de archivos.
+- Notablemente más lento en comparación con systemd-boot, rEFInd y Limine.
 
-### Recommendation
+### Recomendación
 
-GRUB is the only boot manager that supports boot partition encryption (Different from disk encryption).
+GRUB es el único gestor de arranque que soporta el cifrado de la partición de arranque (diferente del cifrado de disco).
 
 ## Limine
 
-Limine is a modern, advanced, and portable multiprotocol bootloader. It serves as the reference implementation for the Limine boot protocol and supports booting Linux as well as chainloading other boot loaders.
+Limine es un cargador de arranque multiprotocolo moderno, avanzado y portable. Sirve como implementación de referencia para el protocolo de arranque Limine y soporta el arranque de Linux, así como la carga encadenada de otros cargadores de arranque.
 
-### Pros
+### Ventajas
 
-- Supports multiple boot protocols, including Multiboot2 and the Linux boot protocols.
-- It can boot on both UEFI and BIOS systems, making it versatile for different hardware configurations.
-- Has theming capabilities similar to GRUB.
-- Direct support for Btrfs snapshots, which is enabled by default for installations using Btrfs as a filesystem.
+- Soporta múltiples protocolos de arranque, incluyendo Multiboot2 y los protocolos de arranque de Linux.
+- Puede arrancar tanto en sistemas UEFI como BIOS, haciéndolo versátil para diferentes configuraciones de hardware.
+- Tiene capacidades de personalización similares a GRUB.
+- Soporte directo para instantáneas Btrfs, que está habilitado por defecto para instalaciones que usan Btrfs como sistema de archivos.
 
-### Cons
+### Desventajas
 
-- Only supports a few filesystems, such as FAT12, FAT16, FAT32, and ISO9660 for the `/boot` partition, which may require additional setup for systems using other filesystems.
-- Unlike some other boot loaders, Limine does not automatically add an entry to the NVRAM on UEFI systems; this must be done manually using tools like `efibootmgr` or handled via `limine-entry-tool`, which is preinstalled out of the box on CachyOS.
+- Solo soporta algunos sistemas de archivos, como FAT12, FAT16, FAT32 e ISO9660 para la partición `/boot`, lo que puede requerir configuración adicional para sistemas que usan otros sistemas de archivos.
+- A diferencia de otros cargadores de arranque, Limine no añade automáticamente una entrada a la NVRAM en sistemas UEFI; esto debe hacerse manualmente usando herramientas como `efibootmgr` o gestionarse mediante `limine-entry-tool`, que viene preinstalada en CachyOS.
 
-### Recommendation
+### Recomendación
 
-Limine is recommended for users who need a lightweight and versatile bootloader that supports both UEFI and BIOS systems. It is particularly suitable for those who prefer a simple setup with theming options and Btrfs snapshot support. Additionally, Limine serves as a modern replacement for GRUB, which has seen fewer updates recently and has faced multiple security issues due to its EFI/filesystem drivers.
+Limine es recomendado para usuarios que necesitan un cargador de arranque ligero y versátil que soporte tanto sistemas UEFI como BIOS. Es particularmente adecuado para aquellos que prefieren una configuración simple con opciones de personalización y soporte para instantáneas Btrfs. Además, Limine sirve como un reemplazo moderno para GRUB, que ha visto menos actualizaciones recientemente y ha enfrentado múltiples problemas de seguridad debido a sus controladores EFI/sistema de archivos.
 
-## TL:DR
+## Resumen
 
-Choose **Limine** for most users: it offers easy setup with built-in BTRFS snapshot support, works on both BIOS and UEFI systems, and handles multi-booting with Windows well. Choose **GRUB** only if you specifically need encrypted boot partition support. Consider **rEFInd** if you prioritize a polished graphical interface and primarily multi-boot on UEFI systems. Choose **systemd-boot** if you want the simplest setup and don't need BTRFS snapshot support out of the box.
+Elige **Limine** para la mayoría de usuarios: ofrece una configuración fácil con soporte incorporado para instantáneas BTRFS, funciona en sistemas BIOS y UEFI, y maneja bien el arranque múltiple con Windows. Elige **GRUB** solo si necesitas específicamente soporte para partición de arranque cifrada. Considera **rEFInd** si priorizas una interfaz gráfica pulida y principalmente arrancas múltiples sistemas en UEFI. Elige **systemd-boot** si quieres la configuración más sencilla y no necesitas soporte para instantáneas BTRFS listo para usar.

@@ -1,18 +1,17 @@
 ---
-title: Official CachyOS Community Rules
-description: Discord, Reddit, Twitter, Forum, Telegram
+title: Reglas Oficiales de la Comunidad CachyOS
+description: Discord, Reddit, Twitter, Foro, Telegram
 ---
 
-Violating these rules is not allowed and account ban will follow:
+La violación de estas reglas no está permitida y conllevará la suspensión de la cuenta:
 
-1. Insulting community participants is prohibited.
-2. Incitement of ethnic hatred is prohibited.
-3. The posting of pornographic materials is prohibited.
-4. Discussion of political topics is prohibited when it gets out of control.
-5. Discussion of religious topics is prohibited.
-6. It is forbidden to advertise other resources without the consent of the administration.
-7. It is forbidden to impersonate another person.
-8. It is forbidden to flood (publish the same type of information several times in a row).
-9. It is forbidden to provoke conflicts between participants.
-10. This is a LGBTQ+ safe place, and so it is forbidden to provoke and insult LGBTQ+ people.
-
+1. Está prohibido insultar a los miembros de la comunidad.
+2. Está prohibida la incitación al odio étnico.
+3. Está prohibida la publicación de materiales pornográficos.
+4. Está prohibida la discusión de temas políticos cuando se sale de control.
+5. Está prohibida la discusión de temas religiosos.
+6. Está prohibido promocionar otros recursos sin el consentimiento de la administración.
+7. Está prohibido suplantar la identidad de otra persona.
+8. Está prohibido el flood (publicar el mismo tipo de información varias veces seguidas).
+9. Está prohibido provocar conflictos entre participantes.
+10. Este es un espacio seguro para el colectivo LGBTQ+, por lo que está prohibido provocar e insultar a personas LGBTQ+.

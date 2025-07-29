@@ -1,20 +1,18 @@
 ---
-title: CachyOS chroot Helper
-description: Helper tool to make it easier to chroot into systems
+title: Ayudante CachyOS chroot
+description: Herramienta para facilitar el chroot en sistemas
 ---
 
-[**`cachy-chroot`**](https://github.com/CachyOS/cachy-chroot) is a simple helper program to ease the process of chrooting into existing
-CachyOS or any Arch-based install. It lists all the partitions discovered on the machine and also supports listing BTRFS subvolumes.
-Last but not least, `cachy-chroot` also supports encrypted systems via LUKS. It will map each `fstab` entries to its designated `crypttab`
-entries and will close all LUKS volumes gracefully when exiting the chroot.
+[**`cachy-chroot`**](https://github.com/CachyOS/cachy-chroot) es un programa auxiliar sencillo para facilitar el proceso de hacer chroot en una instalación existente de CachyOS o cualquier sistema basado en Arch. Lista todas las particiones detectadas en la máquina y también permite listar subvolúmenes BTRFS.
+Por último, pero no menos importante, `cachy-chroot` también admite sistemas cifrados mediante LUKS. Mapeará cada entrada de `fstab` con su correspondiente entrada de `crypttab` y cerrará todos los volúmenes LUKS correctamente al salir del chroot.
 
-## Usage
+## Uso
 
-The process of chrooting **must** be done on a live ISO. Below is an example of using `cachy-chroot` in a CachyOS BTRFS install.
+El proceso de chroot **debe** realizarse desde una ISO en vivo. A continuación se muestra un ejemplo de uso de `cachy-chroot` en una instalación BTRFS de CachyOS.
 
-```sh title="chrooting with cachy-chroot"
-❯ sudo su # Enter the root user within the live ISO
-❯ pacman -Sy cachy-chroot # Ensure that cachy-chroot is at the latest version
+```sh title="chroot con cachy-chroot"
+❯ sudo su # Entrar como usuario root dentro de la ISO en vivo
+❯ pacman -Sy cachy-chroot # Asegurar que cachy-chroot está en la última versión
 ❯ cachy-chroot
 Info: Found 3 block devices
 Info: Found partition: Partition: /dev/nvme0n1p1: FS: vfat UUID: EDA6-ED98
@@ -28,23 +26,22 @@ Info: Found partition: Partition: /dev/nvme0n1p4: FS: btrfs UUID: 66e84339-8c77-
 Info: Selected BTRFS partition, mounting and listing subvolumes...
 Info: Mounting partition /dev/nvme0n1p2 at /tmp/cachyos-chroot-temp-mount-b09a027e-a61d-424f-858f-2e02be61b342-hwAeIm with options: []
 Info: Unmounting partition at /tmp/cachyos-chroot-temp-mount-b09a027e-a61d-424f-858f-2e02be61b342-hwAeIm
-? Do you want to use CachyOS BTRFS preset to auto mount root subvolume? (y/n) › # Enter y if on CachyOS
+? Do you want to use CachyOS BTRFS preset to auto mount root subvolume? (y/n) › # Introduce y si estás en CachyOS
 ```
 
-After selecting the root partition, the program will prompt to mount additional partitions, e.g. the `/boot` partition
+Después de seleccionar la partición raíz, el programa solicitará montar particiones adicionales, por ejemplo, la partición `/boot`
 
-```sh title="Mounting additional partitions"
+```sh title="Montaje de particiones adicionales"
 ✔ Do you want to mount additional partitions? · yes
-? Enter the mount point for additional partition (e.g. /boot) type 'skip' to cancel:  › # /boot on systemd-boot, /boot/efi on GRUB and rEFInd
+? Enter the mount point for additional partition (e.g. /boot) type 'skip' to cancel:  › # /boot en systemd-boot, /boot/efi en GRUB y rEFInd
 ```
 
-When finished, exit the chroot environment by passing `exit` to the prompt or pressing `CTRL+D` on the keyboard.
+Al terminar, sal del entorno chroot escribiendo `exit` en el prompt o pulsando `CTRL+D` en el teclado.
 
-```sh title="Exiting chroot"
+```sh title="Salir del chroot"
 exit
 ```
 
-## Learn More
+## Más información
 
 - [Arch Wiki - chroot](https://wiki.archlinux.org/title/Chroot)
-

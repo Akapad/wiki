@@ -1,46 +1,46 @@
 ---
-title: Filesystems
-description: Description and recommendations for the available filesystems. (ext4, f2fs, btrfs, xfs, zfs, bcachefs)
+title: Sistemas de archivos
+description: Descripción y recomendaciones para los sistemas de archivos disponibles. (ext4, f2fs, btrfs, xfs, zfs, bcachefs)
 ---
 
-CachyOS offers 5 filesystems to allow the user to choose what best fits their needs. The following will go over advantages, disadvantages and recommendations for each filesystem. Each filesystem comes with its requirements/utilities preinstalled on CachyOS.
+CachyOS ofrece 5 sistemas de archivos para permitir al usuario elegir el que mejor se adapte a sus necesidades. A continuación se detallan las ventajas, desventajas y recomendaciones para cada sistema de archivos. Cada sistema de archivos viene con sus requisitos/utilidades preinstalados en CachyOS.
 
 :::note
-BTRFS is the default and recommended filesystem for CachyOS. Choose it if unsure.
+BTRFS es el sistema de archivos predeterminado y recomendado para CachyOS. Elígelo si no estás seguro.
 :::
 
 ## XFS
-XFS is a journaling filesystem created and developed by Silicon Graphics, Inc. It was created in 1993, ported to linux in 2001, and is now widely supported by most Linux distributions.
-### Pros
-- Fast, XFS was originally designed with speed and extreme scalability in mind.
-- Reliable, XFS makes use of several technologies to prevent data corruption.
-- Resistant to fragmentation due to its extent-based nature and delayed allocation strategy.
-### Cons
-- Cannot be shrunk.
+XFS es un sistema de archivos con registro (journaling) creado y desarrollado por Silicon Graphics, Inc. Fue creado en 1993, portado a Linux en 2001, y ahora es ampliamente compatible con la mayoría de las distribuciones de Linux.
+### Ventajas
+- Rápido, XFS fue diseñado originalmente pensando en la velocidad y la escalabilidad extrema.
+- Fiable, XFS utiliza varias tecnologías para prevenir la corrupción de datos.
+- Resistente a la fragmentación debido a su naturaleza basada en extensiones y su estrategia de asignación retardada.
+### Desventajas
+- No se puede reducir su tamaño.
 
-### Userspace utility
-The package containing userspace tools to manage XFS filesystems is `xfsprogs`.
+### Utilidad para el usuario
+El paquete que contiene las herramientas de usuario para gestionar sistemas de archivos XFS es `xfsprogs`.
 
-### Recommendation:
-XFS is the recommended filesystem for users who do not need advanced features and simply want a fast and reliable filesystem.
+### Recomendación:
+XFS es el sistema de archivos recomendado para usuarios que no necesitan funciones avanzadas y simplemente quieren un sistema de archivos rápido y fiable.
 
 
 ## BTRFS
-BTRFS is a modern copy-on-write(COW) filesystem created in 2007 and declared stable in the linux kernel in 2013. It is widely supported and is mainly known for its advanced feature set.
-### Pros
-- Transparent compression. BTRFS supports transparently compressing files to allow for significant space savings with no user intervention. CachyOS ships with ZSTD compression set to level 3 by default.
-- Snapshot functionality. BTRFS leverages its COW nature to allow for the creation of snapshots of subvolumes that take up very little actual space.
-- Subvolume functionality allowing for greater control over the filesystem.
-- Able to grow or shrink.
-- Very fast development.
-### Cons
-- Sometimes requires defragmentation or balancing.
-- Worse on rotational drives due to aforementioned fragmentation.
-### Userspace utility
-Btrfs userspace utility package is `btrfs-progs`
+BTRFS es un sistema de archivos moderno de copia en escritura (COW) creado en 2007 y declarado estable en el kernel de Linux en 2013. Es ampliamente compatible y principalmente conocido por su conjunto de características avanzadas.
+### Ventajas
+- Compresión transparente. BTRFS permite comprimir archivos de forma transparente para ahorrar espacio significativo sin intervención del usuario. CachyOS viene con compresión ZSTD configurada en nivel 3 por defecto.
+- Funcionalidad de instantáneas. BTRFS aprovecha su naturaleza COW para permitir la creación de instantáneas de subvolúmenes que ocupan muy poco espacio real.
+- Funcionalidad de subvolúmenes que permite un mayor control sobre el sistema de archivos.
+- Capaz de crecer o reducirse.
+- Desarrollo muy rápido.
+### Desventajas
+- A veces requiere desfragmentación o equilibrado.
+- Peor rendimiento en discos rotacionales debido a la fragmentación mencionada.
+### Utilidad para el usuario
+El paquete de utilidades para BTRFS es `btrfs-progs`
 
-### Subvolume Layout
-CachyOS provides a subvolume layout out of the box to allow easy snapshot functionality.
+### Estructura de subvolúmenes
+CachyOS proporciona una estructura de subvolúmenes lista para usar que permite una fácil funcionalidad de instantáneas.
 - Subvol @ = /
 - Subvol @home = /home
 - Subvol @root = /root
@@ -49,92 +49,91 @@ CachyOS provides a subvolume layout out of the box to allow easy snapshot functi
 - Subvol @tmp = /var/tmp
 - Subvol @log = /var/log
 
-### Recommendation:
-BTRFS is recommended for users who want snapshot/backup functionality and transparent compression.
+### Recomendación:
+BTRFS es recomendado para usuarios que desean funcionalidad de instantáneas/copias de seguridad y compresión transparente.
 
 
 ## EXT4
-EXT4 (fourth extended filesystem) is the most commonly used Linux filesystem. EXT4 was made stable in the linux kernel in 2008.
-### Pros
-- Very common allowing easy access to plenty of resources.
-- Reliable. EXT4 has a proven track record of being very reliable.
-- Able to grow or shrink.
-### Cons
-- Built on an old code base.
-- Lacks many of the advanced features other filesystems offer.
+EXT4 (cuarto sistema de archivos extendido) es el sistema de archivos más comúnmente utilizado en Linux. EXT4 se estabilizó en el kernel de Linux en 2008.
+### Ventajas
+- Muy común, lo que permite fácil acceso a numerosos recursos.
+- Fiable. EXT4 tiene un historial probado de gran fiabilidad.
+- Capaz de crecer o reducirse.
+### Desventajas
+- Construido sobre una base de código antigua.
+- Carece de muchas de las características avanzadas que ofrecen otros sistemas de archivos.
 
-### Userspace utilities
-The package to manage ext4 is `e2fsprogs`
+### Utilidades para el usuario
+El paquete para gestionar ext4 es `e2fsprogs`
 
-### Recommendation:
-EXT4 is recommended for users who want the simplest and most commonly used filesystem.
+### Recomendación:
+EXT4 es recomendado para usuarios que desean el sistema de archivos más simple y comúnmente utilizado.
 
 
 ## ZFS
 
-ZFS is an advanced filesystem originally developed by Sun Microsystems in 2005. ZFS has many features however it licensed under CDDL which means it can not be included inside the linux kernel and requires a separate module installed.
+ZFS es un sistema de archivos avanzado desarrollado originalmente por Sun Microsystems en 2005. ZFS tiene muchas características, sin embargo, está licenciado bajo CDDL, lo que significa que no puede incluirse dentro del kernel de Linux y requiere un módulo separado instalado.
 
 :::caution
-Do not use a Real-time kernel together with ZFS because its not compatible due to licensing issues.
+No utilices un kernel en tiempo real junto con ZFS porque no es compatible debido a problemas de licencia.
 :::
 
-### Pros
-- Pooled storage (zpool)
-- Snapshots using COW
-- Compression
-- Raid-Z support
-- ARC cache allows insanely fast read times on commonly accessed files.
-### Cons
-- Very complicated to use and understand due to features like zpool and ARC.
-- ARC requires a lot of ram to be effective.
-- Not included in the linux kernel therefore dependent on a third party kernel module (OpenZFS)
-- Incompatible with Real-time preemption
+### Ventajas
+- Almacenamiento en pool (zpool)
+- Instantáneas usando COW
+- Compresión
+- Soporte para Raid-Z
+- La caché ARC permite tiempos de lectura increíblemente rápidos en archivos de acceso frecuente.
+### Desventajas
+- Muy complicado de usar y entender debido a características como zpool y ARC.
+- ARC requiere mucha RAM para ser efectivo.
+- No incluido en el kernel de Linux, por lo tanto depende de un módulo de kernel de terceros (OpenZFS)
+- Incompatible con la preempción en tiempo real
 
-### Required tools
-'ZFS-Module' CachyOS provides a precompiled zfs module for each kernel version.
-`zfs-utils` for the userspace utilities.
+### Herramientas necesarias
+'ZFS-Module' CachyOS proporciona un módulo zfs precompilado para cada versión del kernel.
+`zfs-utils` para las utilidades de usuario.
 
-### Recommendation:
-ZFS should only be used by advanced users who want the advanced features of ZFS such as pooled storage or the ARC cache.
+### Recomendación:
+ZFS solo debe ser utilizado por usuarios avanzados que desean las características avanzadas de ZFS como el almacenamiento en pool o la caché ARC.
 
 
 ## F2FS
-F2FS or the Flash-Friendly File System, is a flash file system created and developed by Samsung originally for the linux kernel. F2FS was created to cater specifically for the NAND flash used in modern day storage.
-### Pros
-- Designed with flash friendliness in mind.
-- Transparent compression used to reduce disk writes (Space savings not currently usable by user)
-- Faster than other filesystems like EXT4.
-- Better wear leveling further prolonging the life of NAND flash.
-### Cons
-- Cannot shrink.
-- Space savings from compression cannot currently be used by the user. This may be added in the future.
-- Relatively weak fsck. (filesystem check)
-- Downgrading to a kernel older than the version that created the filesystem may cause issues.
+F2FS o Sistema de Archivos Amigable con Flash, es un sistema de archivos flash creado y desarrollado por Samsung originalmente para el kernel de Linux. F2FS fue creado para adaptarse específicamente a la memoria flash NAND utilizada en el almacenamiento moderno.
+### Ventajas
+- Diseñado pensando en la compatibilidad con memoria flash.
+- Compresión transparente utilizada para reducir las escrituras en disco (el ahorro de espacio no es actualmente utilizable por el usuario)
+- Más rápido que otros sistemas de archivos como EXT4.
+- Mejor nivelación de desgaste, prolongando aún más la vida de la memoria flash NAND.
+### Desventajas
+- No se puede reducir su tamaño.
+- El ahorro de espacio por compresión no puede ser utilizado actualmente por el usuario. Esto podría añadirse en el futuro.
+- Fsck (verificación del sistema de archivos) relativamente débil.
+- Degradar a un kernel más antiguo que la versión que creó el sistema de archivos puede causar problemas.
 
-### Userspace utilities
-The main utility for f2fs is `f2fs-tools`
+### Utilidades para el usuario
+La utilidad principal para f2fs es `f2fs-tools`
 
-### Recommendation:
-F2FS is only recommended for users who want to maximize the life of their NAND flash.
+### Recomendación:
+F2FS solo se recomienda para usuarios que desean maximizar la vida útil de su memoria flash NAND.
 
 ## BcacheFS
-Bcachefs is an advanced new filesystem for Linux, with an emphasis on reliability and robustness and the complete set of features one would expect from a modern filesystem.
+Bcachefs es un nuevo sistema de archivos avanzado para Linux, con énfasis en la fiabilidad y robustez, y el conjunto completo de características que se esperarían de un sistema de archivos moderno.
 
-:::caution[ATTENTION]
-Bcachefs is still considered as experimental and can have issues.
+:::caution[ATENCIÓN]
+Bcachefs todavía se considera experimental y puede tener problemas.
 :::
 
-### Pros
-- Copy on write (CoW) - like BTRFS or ZFS
-- Compression
-- Caching, Data Placement
-- Replication
-- Scalable
-### Cons
+### Ventajas
+- Copia en escritura (CoW) - como BTRFS o ZFS
+- Compresión
+- Caché, Colocación de datos
+- Replicación
+- Escalable
+### Desventajas
 - Experimental
-- Setup can be complicated
+- La configuración puede ser complicada
 
-## TL:DR
-Use the default filesystem **BTRFS** as it is considered stable and has a lot of neat features (snapshots, compression, etc). Use **XFS** or **EXT4** for a simple
-and fast filesystem.
+## Resumen
+Utiliza el sistema de archivos predeterminado **BTRFS** ya que se considera estable y tiene muchas características interesantes (instantáneas, compresión, etc.). Utiliza **XFS** o **EXT4** para un sistema de archivos simple y rápido.
 

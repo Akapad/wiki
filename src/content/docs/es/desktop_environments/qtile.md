@@ -1,129 +1,129 @@
 ---
-title: Qtile Configuration
-description: CachyOS Qtile keybinds & FAQ
+title: Configuración de Qtile
+description: Atajos de teclado y preguntas frecuentes de CachyOS Qtile
 ---
 
-Credits go to [Shendisx](<https://github.com/Shendisx>) for making this Qtile setup.
+Créditos a [Shendisx](<https://github.com/Shendisx>) por crear esta configuración de Qtile.
 
-> X11 and Wayland session
+> Sesión X11 y Wayland
 
-## Keybinds
+## Atajos de teclado
 
-Most of the key combinations require the use of the mod key which in our case is the Windows key (referenced as SUPER), you can change it on the config file.
-Some of them might make use of mod1 (ALT key).
+La mayoría de las combinaciones de teclas requieren el uso de la tecla mod que en nuestro caso es la tecla Windows (referenciada como SUPER), puedes cambiarla en el archivo de configuración.
+Algunas de ellas podrían hacer uso de mod1 (tecla ALT).
 
-### Open terminal
+### Abrir terminal
 
 * SUPER + Return
 
-### Kill focused window
+### Cerrar ventana enfocada
 
 * SUPER + Q
 
-### Go to workspace (1-9)
+### Ir al espacio de trabajo (1-9)
 
-* SUPER + 1-9 (Number row, number pad does not count)
+* SUPER + 1-9 (Fila de números, el teclado numérico no cuenta)
 
-### Open Rofi (Program launcher)
+### Abrir Rofi (Lanzador de programas)
 
-* ALT + Space
+* ALT + Espacio
 
-### Move focus to (Left,Right,Down,Up)
+### Mover el enfoque a (Izquierda, Derecha, Abajo, Arriba)
 
-* SUPER + H (Left)
-* SUPER + L (Right)
-* SUPER + J (Down)
-* SUPER + K (Up)
-* SUPER + Space (Move windows between left/right columns or move up/down in current stack)
+* SUPER + H (Izquierda)
+* SUPER + L (Derecha)
+* SUPER + J (Abajo)
+* SUPER + K (Arriba)
+* SUPER + Espacio (Mover ventanas entre columnas izquierda/derecha o mover arriba/abajo en la pila actual)
 
-### Move focused window to (Left,Right,Down,Up)
+### Mover ventana enfocada a (Izquierda, Derecha, Abajo, Arriba)
 
-* SUPER + Shift + H (Left)
-* SUPER + Shift + L (Right)
-* SUPER + Shift + J (Down)
-* SUPER + Shift + K (Up)
+* SUPER + Shift + H (Izquierda)
+* SUPER + Shift + L (Derecha)
+* SUPER + Shift + J (Abajo)
+* SUPER + Shift + K (Arriba)
 
-### Grow focused window to (Left,Right,Down,Up)
+### Aumentar ventana enfocada hacia (Izquierda, Derecha, Abajo, Arriba)
 
-* SUPER + Control + H (Left)
-* SUPER + Control + L (Right)
-* SUPER + Control + J (Down)
-* SUPER + Control + K (Up)
+* SUPER + Control + H (Izquierda)
+* SUPER + Control + L (Derecha)
+* SUPER + Control + J (Abajo)
+* SUPER + Control + K (Arriba)
 
-### Reset all window sizes of current workspace to their original size
+### Restablecer todos los tamaños de ventana del espacio de trabajo actual a su tamaño original
 
 * SUPER + N
 
-### Toggle Fullscreen in focused window
+### Alternar pantalla completa en ventana enfocada
 
 * SUPER + F
 
-### Toggle floating in focused window
+### Alternar flotante en ventana enfocada
 
 * SUPER + V
 
-### Toggle between split and unsplit sides of stack
+### Alternar entre lados divididos y no divididos de la pila
 
 * SUPER + Shift + Return
 
-### Toggle between layouts
+### Alternar entre diseños
 
 * SUPER + TAB
 
-### Reload Qtile configuration file
+### Recargar archivo de configuración de Qtile
 
 * SUPER + Control + R
 
-### Exit Qtile (end running X session)
+### Salir de Qtile (finalizar sesión X en ejecución)
 
 * SUPER + Control + Q
 
-### Execute Flameshot (Utility for taking screenshots)
+### Ejecutar Flameshot (Utilidad para tomar capturas de pantalla)
 
 * Print
 
-### Capture a full-screen screenshot (Saved in $HOME/Pictures)
+### Capturar una captura de pantalla completa (Guardada en $HOME/Pictures)
 
 * Control + Print
 
-### Open File Manager (Thunar by default)
+### Abrir Gestor de Archivos (Thunar por defecto)
 
 * SUPER + E
 
-### Drag a floating window around with your mouse
+### Arrastrar una ventana flotante con el ratón
 
-* SUPER + Left Click
+* SUPER + Clic Izquierdo
 
-### Grow a floating window with your mouse
+### Aumentar una ventana flotante con el ratón
 
-* SUPER + Right Click
+* SUPER + Clic Derecho
 
-### Bring window to the front
+### Traer ventana al frente
 
-* SUPER + Scroll wheel button
+* SUPER + Botón de la rueda de desplazamiento
 
-### Stick window (For example sticking Firefox PIP will now follow you between workspaces)
+### Fijar ventana (Por ejemplo, fijar Firefox PIP ahora te seguirá entre espacios de trabajo)
 
 * SUPER + S
 
-## FAQ
+## Preguntas frecuentes
 
-### Why is the volume widget showing an error or it's stuck at 0%?
+### ¿Por qué el widget de volumen muestra un error o está atascado en 0%?
 
-* Sometimes this is due to Qtile volume widget not being able to detect your default Output Device, you can take a look in the wiki for more information.
+* A veces esto se debe a que el widget de volumen de Qtile no puede detectar tu dispositivo de salida predeterminado, puedes consultar la wiki para más información.
 * <https://docs.qtile.org/en/latest/manual/ref/widgets.html#pulsevolume>
 
-### Is there a autostart.sh script?
+### ¿Hay un script autostart.sh?
 
-* Its located in scripts/ from Qtile folder
+* Está ubicado en scripts/ desde la carpeta de Qtile
 
-### Does Qtile's bar interacts with the mouse?
+### ¿La barra de Qtile interactúa con el ratón?
 
-* It does, for example if you scroll on the tiny dots which are your workspaces (Active,Inactive,Empty etc) you'll switch to the Left or Right or even click in one of them.
-* Another example is the layout (columns by default), clicking on it allows you to switch between the available layouts
-* CPU and RAM usage by clicking it's going to open Btop (TUI System Monitor)
-* Increase/Lower/Mute/ by interacting on the volume widget
+* Sí lo hace, por ejemplo, si desplazas sobre los pequeños puntos que son tus espacios de trabajo (Activo, Inactivo, Vacío, etc.) cambiarás a la Izquierda o Derecha o incluso puedes hacer clic en uno de ellos.
+* Otro ejemplo es el diseño (columnas por defecto), haciendo clic en él te permite cambiar entre los diseños disponibles
+* Uso de CPU y RAM, al hacer clic abrirá Btop (Monitor del Sistema TUI)
+* Aumentar/Bajar/Silenciar interactuando con el widget de volumen
 
-For more information about Qtile. Please check out their wiki for reference.
+Para más información sobre Qtile. Por favor, consulta su wiki como referencia.
 
 * <https://docs.qtile.org/en/stable/>

@@ -1,83 +1,83 @@
 ---
-title: Chromium-Based Browsers HW Acceleration
-description: Configure hardware acceleration for video decode/encode in Chromium-based browsers on CachyOS. Includes AMD GPU setup and a template for other GPUs/browsers.
+title: Aceleración por Hardware en Navegadores Basados en Chromium
+description: Configura la aceleración por hardware para decodificación/codificación de vídeo en navegadores basados en Chromium en CachyOS. Incluye configuración para GPUs AMD y una plantilla para otras GPUs/navegadores.
 ---
 
-# Chromium-Based Browsers HW Acceleration
+# Aceleración por Hardware en Navegadores Basados en Chromium
 
-This guide outlines enabling hardware acceleration in Chromium-based browsers on CachyOS. This offloads video/graphics tasks to your GPU, improving performance.
+Esta guía detalla cómo habilitar la aceleración por hardware en navegadores basados en Chromium en CachyOS. Esto descarga las tareas de vídeo/gráficos a tu GPU, mejorando el rendimiento.
 
-## Prerequisites
+## Requisitos Previos
 
-* **Chromium-based Browser:** (e.g., Chrome, Brave, Ungoogled Chromium, Edge)
-* **GPU Drivers/APIs:** Up-to-date Mesa (AMD/Intel) or NVIDIA drivers, with Vulkan/VA-API/VDPAU configured.
-* **`amdgpu_top` (for AMD users):** Install `amdgpu_top` from the repository through package manager if you wish to monitor AMD GPU activity from the terminal.
+* **Navegador basado en Chromium:** (ej., Chrome, Brave, Ungoogled Chromium, Edge)
+* **Controladores/APIs de GPU:** Mesa actualizado (AMD/Intel) o controladores NVIDIA, con Vulkan/VA-API/VDPAU configurados.
+* **`amdgpu_top` (para usuarios AMD):** Instala `amdgpu_top` desde el repositorio mediante el gestor de paquetes si deseas monitorizar la actividad de la GPU AMD desde el terminal.
 
-## Contribution
+## Contribución
 
-This guide is extensible. If you have a working hardware acceleration setup for a specific GPU and Chromium-based browser, contribute by adding a new section under "GPU & Browser Configurations." Include:
+Esta guía es extensible. Si tienes una configuración de aceleración por hardware funcional para una GPU específica y un navegador basado en Chromium, contribuye añadiendo una nueva sección bajo "Configuraciones de GPU y Navegador". Incluye:
 
-* **Browser Name**
-* **GPU Model**
-* **Flags:** `~/.config/[browser]-flags.conf` content.
-* **File Path:** Full path to the flags file.
-* **Notes (Optional):** Key drivers, packages, or setup specifics.
+* **Nombre del Navegador**
+* **Modelo de GPU**
+* **Flags:** Contenido del archivo `~/.config/[navegador]-flags.conf`.
+* **Ruta del Archivo:** Ruta completa al archivo de flags.
+* **Notas (Opcional):** Controladores clave, paquetes o especificaciones de configuración.
 
-## Setup Steps
+## Pasos de Configuración
 
-1.  **Identify Flags File:** Locate your browser's flags file path in "GPU & Browser Configurations."
-2.  **Edit Flags File:** Open/create the file using `nano` (or your preferred text editor like `micro`, `vim`).
+1.  **Identificar Archivo de Flags:** Localiza la ruta del archivo de flags de tu navegador en "Configuraciones de GPU y Navegador".
+2.  **Editar Archivo de Flags:** Abre/crea el archivo usando `nano` (o tu editor de texto preferido como `micro`, `vim`).
     ```bash
-    nano [PATH_TO_YOUR_BROWSER_FLAGS_FILE]
-    # Example: nano ~/.config/chrome-flags.conf
+    nano [RUTA_A_TU_ARCHIVO_DE_FLAGS]
+    # Ejemplo: nano ~/.config/chrome-flags.conf
     ```
-3.  **Add Flags:** Paste the relevant GPU/browser flags into the file.
-4.  **Save & Close.**
-5.  **Restart Browser:** Close all browser instances and relaunch.
-6.  **Verify:** Navigate to `chrome://gpu` (or `brave://gpu`, `edge://gpu`, etc.). Confirm "Hardware accelerated" status under "Video Acceleration Information" and "Graphics Feature Status."
+3.  **Añadir Flags:** Pega los flags relevantes de GPU/navegador en el archivo.
+4.  **Guardar y Cerrar.**
+5.  **Reiniciar Navegador:** Cierra todas las instancias del navegador y vuelve a lanzarlo.
+6.  **Verificar:** Navega a `chrome://gpu` (o `brave://gpu`, `edge://gpu`, etc.). Confirma el estado "Acelerado por hardware" bajo "Información de Aceleración de Vídeo" y "Estado de Características Gráficas".
 
-## Verification Tips
+## Consejos de Verificación
 
-To definitively check if hardware acceleration is active during video playback, use these methods:
+Para comprobar definitivamente si la aceleración por hardware está activa durante la reproducción de vídeo, utiliza estos métodos:
 
-### 1. Check AMD GPU Utilization (`amdgpu_top`)
+### 1. Comprobar la Utilización de GPU AMD (`amdgpu_top`)
 
-If you have an AMD GPU and `amdgpu_top` installed, open a terminal and run it:
+Si tienes una GPU AMD y `amdgpu_top` instalado, abre un terminal y ejecútalo:
 
 ```bash
 amdgpu_top
 ````
 
-While a video is playing in your browser (e.g., YouTube), observe the `media` section in `amdgpu_top`. You should see some utilization here, indicating your GPU's media engine is active. If it remains at 0% during video playback, hardware acceleration might not be fully engaged for decoding.
+Mientras se reproduce un vídeo en tu navegador (ej., YouTube), observa la sección `media` en `amdgpu_top`. Deberías ver alguna utilización aquí, indicando que el motor multimedia de tu GPU está activo. Si permanece al 0% durante la reproducción de vídeo, es posible que la aceleración por hardware no esté completamente activada para la decodificación.
 
-### 2. Check Browser Developer Tools (Video Decoder)
+### 2. Comprobar las Herramientas de Desarrollo del Navegador (Decodificador de Vídeo)
 
-This method provides direct confirmation from the browser itself:
+Este método proporciona confirmación directa desde el propio navegador:
 
-1. Open your Chromium-based browser.
+1. Abre tu navegador basado en Chromium.
     
-2. Start playing a video (e.g., on YouTube or a local file).
+2. Comienza a reproducir un vídeo (ej., en YouTube o un archivo local).
     
-3. Open Developer Tools: Press `F12` or `Ctrl+Shift+I`.
+3. Abre las Herramientas de Desarrollo: Pulsa `F12` o `Ctrl+Shift+I`.
     
-4. Navigate to the **Media** tab. If you don't see it, click the three dots (`...`) or `>>` (More tabs) on the Developer Tools toolbar, then select `Media`.
+4. Navega a la pestaña **Media**. Si no la ves, haz clic en los tres puntos (`...`) o `>>` (Más pestañas) en la barra de herramientas de Desarrollo, luego selecciona `Media`.
     
-5. In the "Players" section on the left, click on the entry corresponding to your video.
+5. En la sección "Players" a la izquierda, haz clic en la entrada correspondiente a tu vídeo.
     
-6. In the main panel, scroll down to the **Video Decoder** section.
+6. En el panel principal, desplázate hacia abajo hasta la sección **Video Decoder**.
     
-7. Look for the `Hardware decoder` label. It should be `true`. If it says `false` or shows a software decoder name (e.g., `FFmpegVideoDecoder`, `VpxVideoDecoder`, `Dav1dVideoDecoder`), hardware acceleration is not active for that video.
+7. Busca la etiqueta `Hardware decoder`. Debería ser `true`. Si dice `false` o muestra el nombre de un decodificador por software (ej., `FFmpegVideoDecoder`, `VpxVideoDecoder`, `Dav1dVideoDecoder`), la aceleración por hardware no está activa para ese vídeo.
     
 
-## GPU & Browser Configurations
+## Configuraciones de GPU y Navegador
 
 ### AMD Radeon RX 6900 XT (Google Chrome)
 
-- **Browser:** Google Chrome
+- **Navegador:** Google Chrome
     
 - **GPU:** AMD Radeon RX 6900 XT
     
-- **Flags File:** `~/.config/chrome-flags.conf`
+- **Archivo de Flags:** `~/.config/chrome-flags.conf`
     
 
 ```bash
@@ -87,21 +87,21 @@ This method provides direct confirmation from the browser itself:
 --ozone-platform-hint=x11
 ```
 
-**Notes:** Leverages Vulkan (via ANGLE) and VA-API. `--ozone-platform-hint=x11` can be useful even on Wayland for certain acceleration paths.
+**Notas:** Aprovecha Vulkan (vía ANGLE) y VA-API. `--ozone-platform-hint=x11` puede ser útil incluso en Wayland para ciertas rutas de aceleración.
 
 ---
 
-### Template to contribute
+### Plantilla para contribuir
 
-### [Your Browser] - [Your GPU Model] (Contributed by [Your Name/Handle])
+### [Tu Navegador] - [Tu Modelo de GPU] (Contribuido por [Tu Nombre/Alias])
 
-- **Browser:** [e.g., Brave, Ungoogled Chromium, Microsoft Edge, Vivaldi, Opera, Chromium]
+- **Navegador:** [ej., Brave, Ungoogled Chromium, Microsoft Edge, Vivaldi, Opera, Chromium]
     
-- **GPU:** [e.g., NVIDIA GeForce RTX 3080, Intel Iris Xe]
+- **GPU:** [ej., NVIDIA GeForce RTX 3080, Intel Iris Xe]
     
-- **Flags File Path:** (Crucial, varies per browser!)
+- **Ruta del Archivo de Flags:** (Crucial, ¡varía según el navegador!)
     
-    - **Common `.conf` paths:**
+    - **Rutas comunes de `.conf`:**
         
         - **Chromium:** `~/.config/chromium-flags.conf`
             
@@ -109,18 +109,18 @@ This method provides direct confirmation from the browser itself:
             
         - **Ungoogled Chromium:** `~/.config/ungoogled-chromium-flags.conf`
             
-    - **`.desktop` file modification:** Some browsers (Brave, Edge, Vivaldi, Opera) might require editing the `Exec=` line in their `.desktop` file (copy from `/usr/share/applications/` to `~/.local/share/applications/` first).
+    - **Modificación de archivo `.desktop`:** Algunos navegadores (Brave, Edge, Vivaldi, Opera) podrían requerir editar la línea `Exec=` en su archivo `.desktop` (copia primero desde `/usr/share/applications/` a `~/.local/share/applications/`).
         
 
-**Flags Content (for `.conf` file or `Exec=` line):**
+**Contenido de Flags (para archivo `.conf` o línea `Exec=`):**
 
 ```bash
-# Paste your flags here.
-# For .desktop files, flags are space-separated after the executable.
+# Pega tus flags aquí.
+# Para archivos .desktop, los flags se separan por espacios después del ejecutable.
 ```
 
-**Notes (Optional):**
+**Notas (Opcional):**
 
-- Required drivers (e.g., `nvidia-dkms`, `intel-media-driver`).
+- Controladores requeridos (ej., `nvidia-dkms`, `intel-media-driver`).
     
-- Specific setup considerations or `.desktop` file modification instructions.
+- Consideraciones específicas de configuración o instrucciones de modificación del archivo `.desktop`.
